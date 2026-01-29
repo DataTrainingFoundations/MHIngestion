@@ -9,10 +9,7 @@ class AppConfig:
     def __init__(self):
         with open(APP_CONFIG_FILENAME,'r') as file:
             self._data = yaml.safe_load(file)
-    
-    def getAttribute(self, attribute:str) -> str:
-        return self._data[attribute]
-    
+
     def __getitem__(self, key):
         return self._data[key]
     
