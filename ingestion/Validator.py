@@ -42,7 +42,7 @@ def retrieve_data():
     #anything that doesn't meet the rejected conditions becomes valid
     valid_df = df[~rejected].copy()
     # Remove the suppression flag column as it is no longer necessary
-    valid_df.drop(columns=['Suppression Flag'], inplace=True)
+    valid_df.drop(columns=['suppression flag'], inplace=True)
     
     # Add rejection reasons (nice for stg_rejects)
     # Priority order: missing required > suppression > phase
