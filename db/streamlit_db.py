@@ -31,10 +31,7 @@ def start_DB():
         logger.error(f"An error has occurred during connection: {err}")
 
 def insert_valid_data(df):
-    data_to_insert = [
-        {k.replace(" ", "_"): v for k, v in row.items()}
-        for row in df.to_dict(orient='records')
-    ]
+    data_to_insert = df.to_dict(orient='records')
     insert_query = text("""INSERT INTO mental_health (indicator, category, state, \
                                subcategory, phase, time_period, time_period_label, time_period_start_date,\
                                 time_period_end_date, value, lowci, highci, confidence_interval, quartile_range) VALUES (:indicator, :group, :state, \
@@ -49,10 +46,7 @@ def insert_valid_data(df):
         logger.error(f"Error occurred during data insertion: {err}")
 
 def insert_rejected_data(df):
-    data_to_insert = [
-        {k.replace(" ", "_"): v for k, v in row.items()}
-        for row in df.to_dict(orient='records')
-    ]
+    data_to_insert = df.to_dict(orient='records')
     insert_query = text("""INSERT INTO mental_health_rejected (indicator, category, state , \
                                subcategory, phase, time_period, time_period_label, time_period_start_date,\
                                 time_period_end_date, value, lowci, highci, confidence_interval, quartile_range,\
