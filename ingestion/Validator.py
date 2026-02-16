@@ -9,13 +9,14 @@ def retrieve_data(df):
 
     # Normalize column names so your REQUIRED_FIELDS match
     df = df.copy()
-    df.columns = [c.strip().lower() for c in df.columns]
+    df.columns = [c.strip().lower().replace(" ", "_") for c in df.columns]
+    logger.info(f"Normalized columns: {list(df.columns)}")
 
     # These fields cant be null
     REQUIRED_FIELDS = [
         "indicator", "group", "state", "subgroup", "phase",
-        "time period", "time period label",
-        "time period start date", "time period end date"
+        "time_period", "time_period_label",
+        "time_period_start_date", "time_period_end_date"
     ]
 
     def is_null(series: pd.Series) -> pd.Series:
@@ -32,7 +33,7 @@ def retrieve_data(df):
             missing_required |= is_null(df[col])
 
     # looks for suppression = 1 and phase = -1
-    suppression = (df.get("suppression flag", pd.Series(0, index=df.index)) == 1.0)
+    suppression = (df.get("suppression_flag", pd.Series(0, index=df.index)) == 1.0)
     phase = (df.get("phase", pd.Series("", index=df.index)).astype(str).str.strip() == "-1")
 
     # Rejected if any reject condition
@@ -43,7 +44,7 @@ def retrieve_data(df):
     #anything that doesn't meet the rejected conditions becomes valid
     valid_df = df[~rejected].copy()
     # Remove the suppression flag column as it is no longer necessary
-    valid_df.drop(columns=['suppression flag'], inplace=True)
+    valid_df.drop(columns=['suppression_flag'], inplace=True)
     
     # Add rejection reasons (nice for stg_rejects)
     # Priority order: missing required > suppression > phase
@@ -51,13 +52,13 @@ def retrieve_data(df):
         missing = [c for c in REQUIRED_FIELDS if c not in row.index or pd.isna(row[c]) or str(row[c]).strip() == ""]
         if missing:
             return f"missing required field(s): {', '.join(missing)}"
-        if row.get("suppression flag", 0) == 1.0:
+        if row.get("suppression_flag", 0) == 1.0:
             return "suppression flag = 1"
         if str(row.get("phase", "")).strip() == "-1":
             return "phase = -1"
         return "unknown"
     
-    rejected_df["rejection reason"] = rejected_df.apply(reason_for_row, axis=1)
+    rejected_df["rejection_reason"] = rejected_df.apply(reason_for_row, axis=1)
 
     #logs succesfully created valid and rejected data frames
     logger.info(f"Successfully validated {len(valid_df.index)} rows")

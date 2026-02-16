@@ -1,5 +1,7 @@
 # ignore credential files
 *.env
 *.toml
+#ignore log files
+*.log
 __pycache__/
 *.log
