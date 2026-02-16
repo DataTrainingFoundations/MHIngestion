@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+from pathlib import Path
 import altair as alt
 
 # Title
@@ -10,7 +11,9 @@ if st.button("Reload Data"):
     st.experimental_rerun()  # reruns the script
 
 # Load data (CSV, database, etc.)
-df = pd.read_csv("/Users/rashmiwagde/Documents/Developer/MHIngestion/data/valid_data.csv")
+PROJECT_ROOT = Path(__file__).resolve().parent
+data_path = PROJECT_ROOT / "data" / "valid_data.csv"
+df = pd.read_csv(data_path)
 
 # Show table
 st.dataframe(df)

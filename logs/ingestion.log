@@ -77,3 +77,5 @@
 2768 - 10-Feb-26 13:24:16 - ingestion.Cleaner - DEBUG - Converted 'confidence interval' to string
 2768 - 10-Feb-26 13:24:16 - ingestion.Cleaner - DEBUG - Converted 'quartile range' to string
 2768 - 10-Feb-26 13:24:16 - ingestion.Cleaner - INFO - Completed data cleaning.
+34704 - 16-Feb-26 15:27:34 - main - INFO - Ingestion pipeline starting
+34704 - 16-Feb-26 15:27:34 - ingestion.Reader - DEBUG - Attempting to read CSV at C:\DataTrainingProjects\Project1\DataIngestionProject\data\Mental_Health_DB.csv
