@@ -24,30 +24,30 @@ def clean_data(df):
         logger.debug(f"Converted column '{col}' to numeric")
 
     # --- Enforce int type ---
-    df["time period"] = pd.to_numeric(df["time period"], errors="coerce")
-    logger.debug("Converted 'time period' to nullable Int64")
+    df["time_period"] = pd.to_numeric(df["time_period"], errors="coerce")
+    logger.debug("Converted 'time_period' to nullable Int64")
 
     # --- Enforce datetime ---
-    df["time period start date"] = pd.to_datetime(df["time period start date"], errors="coerce")
-    logger.debug(f"Converted 'time period start date' to datetime")
-    df["time period end date"] = pd.to_datetime(df["time period end date"], errors="coerce")
-    logger.debug(f"Converted 'time period end date' to datetime")
+    df["time_period_start_date"] = pd.to_datetime(df["time_period_start_date"], errors="coerce")
+    logger.debug(f"Converted 'time_period_start_date' to datetime")
+    df["time_period_end_date"] = pd.to_datetime(df["time_period_end_date"], errors="coerce")
+    logger.debug(f"Converted 'time_period_end_date' to datetime")
 
     # --- Normalize text columns ---
     text_cols = [
         "indicator", "group", "state", "subgroup",
-        "time period label", "confidence interval", "quartile range"
+        "time_period_label", "confidence_interval", "quartile_range"
     ]
     for col in text_cols:
         df[col] = df[col].astype("string")
         logger.debug(f"Converted '{col}' to string")
 
     #if the dataframe has the rejected columns cleans them
-    if'rejection reason' in df.columns:
-        df['suppression flag'] = pd.to_numeric(df['suppression flag'], errors="coerce")
-        logger.debug(f"Converted column suppression flag to numeric")
-        df['rejection reason'] = df['rejection reason'].astype("string")
-        logger.debug(f"Converted rejection reason to string")
+    if'rejection_reason' in df.columns:
+        df['suppression_flag'] = pd.to_numeric(df['suppression_flag'], errors="coerce")
+        logger.debug(f"Converted suppression_flag to numeric")
+        df['rejection_reason'] = df['rejection_reason'].astype("string")
+        logger.debug(f"Converted rejection_reason to string")
 
 
 
