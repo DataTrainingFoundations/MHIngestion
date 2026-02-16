@@ -1886,3 +1886,48 @@
 13988 - 14-Feb-26 19:37:42 - DBlogger - Succesfully inserted 9914 rows into database
 13988 - 14-Feb-26 19:37:42 - DBlogger - Succesfully inserted 490 rows into rejected database
 13988 - 14-Feb-26 19:37:42 - DBlogger - Successfully closed DB connection
+17896 - 16-Feb-26 15:10:44 - main - Ingestion pipeline starting
+17896 - 16-Feb-26 15:10:44 - ingestion.Reader - Attempting to read CSV at C:\Users\armin\OneDrive\Desktop\Developer\MHIngestion\data\Mental_Health_DB.csv
+17896 - 16-Feb-26 15:10:44 - ingestion.Reader - Read 10404 rows from C:\Users\armin\OneDrive\Desktop\Developer\MHIngestion\data\Mental_Health_DB.csv
+17896 - 16-Feb-26 15:10:44 - ingestion.Validator - Successfully validated 9914 rows
+17896 - 16-Feb-26 15:10:44 - ingestion.Validator - Rejected 490 rows
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Starting data cleaning step
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Removed 0 duplicate rows
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted column 'phase' to numeric
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted column 'value' to numeric
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted column 'lowci' to numeric
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted column 'highci' to numeric
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted 'time period' to nullable Int64
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted 'time period start date' to datetime
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted 'time period end date' to datetime
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted 'indicator' to string
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted 'group' to string
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted 'state' to string
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted 'subgroup' to string
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted 'time period label' to string
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted 'confidence interval' to string
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted 'quartile range' to string
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Completed data cleaning.
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Starting data cleaning step
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Removed 0 duplicate rows
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted column 'phase' to numeric
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted column 'value' to numeric
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted column 'lowci' to numeric
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted column 'highci' to numeric
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted 'time period' to nullable Int64
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted 'time period start date' to datetime
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted 'time period end date' to datetime
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted 'indicator' to string
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted 'group' to string
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted 'state' to string
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted 'subgroup' to string
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted 'time period label' to string
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted 'confidence interval' to string
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted 'quartile range' to string
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted column suppression flag to numeric
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Converted rejection reason to string
+17896 - 16-Feb-26 15:10:44 - ingestion.Cleaner - Completed data cleaning.
+17896 - 16-Feb-26 15:10:45 - DBlogger - Successfully connected to database
+17896 - 16-Feb-26 15:10:46 - DBlogger - Succesfully inserted 9914 rows into database
+17896 - 16-Feb-26 15:10:46 - DBlogger - Succesfully inserted 490 rows into rejected database
+17896 - 16-Feb-26 15:10:46 - DBlogger - Successfully closed DB connection
