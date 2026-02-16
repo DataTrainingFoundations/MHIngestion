@@ -12,10 +12,7 @@ def read_data(data_path):
 
     logger.info(f"Read {len(df)} rows from {data_path}")
     return df
-<<<<<<< HEAD
         
-=======
->>>>>>> 31b9628171278a5484e5161c8c4024f88c78214f
 
 
 
