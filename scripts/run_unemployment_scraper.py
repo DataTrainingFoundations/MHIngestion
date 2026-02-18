@@ -4,6 +4,7 @@ from datetime import date
 from dateutil.relativedelta import relativedelta
 from dotenv import load_dotenv
 from api_ingestion import *
+from db import streamlit_api_db
 
 import pandas as pd
 

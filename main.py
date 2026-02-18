@@ -1,8 +1,7 @@
 import logging
 from ingestion import *
 from api_ingestion import*
-# from db import *
-from db.streamlit_db import *
+from db import *
 from pathlib import Path
 import mysql.connector
 
