@@ -16,13 +16,15 @@ BLS_URL = "https://api.bls.gov/publicAPI/v2/timeseries/data/"
 logger = logging.getLogger(__name__)
 
 def fetch_bls_timeseries(series_ids: list[str], start_year: int, end_year: int,
-                         api_key: str | None = None) -> tuple[pd.DataFrame, dict[str, object]]:
+                         api_key: str | None = None):
+    #sets up the payload to send to BLS
     payload: dict[str, object] = {
         "seriesid": series_ids,
         "startyear": str(start_year),
         "endyear": str(end_year),
     }
 
+    #if their is an api_key adds it to the payload
     if api_key:
         payload["registrationKey"] = api_key
 
@@ -33,12 +35,13 @@ def fetch_bls_timeseries(series_ids: list[str], start_year: int, end_year: int,
             start_year,
             end_year
         )
-
+        #the request for th json
         resp = requests.post(BLS_URL, json=payload, timeout=30)
         resp.raise_for_status()
-
+        #sets data = to the response
         data = resp.json()
 
+        # checks if request succeeded
         status = data.get("status")
         if status != "REQUEST_SUCCEEDED":
             message = data.get("message", [])
@@ -46,14 +49,15 @@ def fetch_bls_timeseries(series_ids: list[str], start_year: int, end_year: int,
             raise RuntimeError(f"BLS API request failed: {message}")
 
         # TEMP: save raw JSON for debugging
-        PROJECT_ROOT = Path(__file__).resolve().parent.parent
-        data_path = PROJECT_ROOT / "data"
+        # PROJECT_ROOT = Path(__file__).resolve().parent.parent
+        # data_path = PROJECT_ROOT / "data"
 
-        debug_file = data_path / "unemployment_data.json"
+        # debug_file = data_path / "unemployment_data.json"
 
-        with open(debug_file, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2)
-
+        # with open(debug_file, "w", encoding="utf-8") as f:
+        #     json.dump(data, f, indent=2)
+        
+        #turns json into a df
         rows: list[dict[str, object]] = []
         for series in data.get("Results", {}).get("series", []):
             sid = series.get("seriesID")
@@ -68,6 +72,7 @@ def fetch_bls_timeseries(series_ids: list[str], start_year: int, end_year: int,
 
         df = pd.DataFrame(rows)
 
+        #records meta data for the logs
         meta = {
             "source": "bls_laus_api",
             "series_requested": len(series_ids),
@@ -77,8 +82,9 @@ def fetch_bls_timeseries(series_ids: list[str], start_year: int, end_year: int,
         }
 
         logger.info(f"BLS fetch successful | rows={len(df)}")
+        logger.info(meta)
 
-        return df, meta
+        return df
 
     except requests.exceptions.RequestException as e:
         logger.exception("Network/API error occurred while calling BLS API")
@@ -90,10 +96,10 @@ def fetch_bls_timeseries(series_ids: list[str], start_year: int, end_year: int,
 
 
 def read_json(data_path):
-    """
-    TEMP helper to load a saved BLS JSON file
-    and flatten it into a DataFrame.
-    """
+    
+    # TEMP helper to load a saved BLS JSON file
+    # and flatten it into a DataFrame.
+    
     data_path = Path(data_path)
 
     with open(data_path, "r", encoding="utf-8") as f:
