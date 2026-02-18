@@ -62,6 +62,10 @@ def insert_rejected_data(df):
     except Exception as err:
         logger.error(f"Error occurred during data insertion: {err}")
 
+def read_valid_data():
+    df = connection.query("SELECT * FROM mental_health")
+    return df
+
 def close_connection():
     try:
         connection.close()
