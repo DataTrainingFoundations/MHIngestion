@@ -92,9 +92,12 @@ def clean_data_api(df):
     df["series_id"] = df["series_id"].astype("string")
     logger.debug(f"Converted series_id to string")
     df["state_fips"] = df["series_id"].str.slice(5, 7)
-    logger.debug(f"Created temporary column state_fips")
+    logger.debug(f"Created column state_fips ")
     #creates permanent column state which will replace series id
     df["state"] = df["state_fips"].map(FIPS_TO_STATE)
+    df["state"] = df["state"].astype("string")
+    logger.debug(f"Created column state and converted it to string")
+
 
     #validator for the mapping
     missing_states = df["state"].isna().sum()
@@ -102,18 +105,18 @@ def clean_data_api(df):
         logger.warning(f"There are {missing_states} rows with unmapped FIPS codes")
 
     # --- Drops Unneccessary Columns ---
-    df.drop(columns=['series_id', 'state_fips', 'year', 'month', 'period_name'], inplace=True)
-    logger.debug(f"dropped columns series_id, state_fips, year, month, and period_name")
+    df.drop(columns=['series_id', 'year', 'month', 'period_name'], inplace=True)
+    logger.debug(f"dropped columns series_id, year, month, and period_name")
 
     #if the dataframe has the rejected columns cleans them
     if'rejection_reason' in df.columns:
         df['rejection_reason'] = df['rejection_reason'].astype("string")
         logger.debug(f"Converted rejection_reason to string")
         #reindexs with rejection reason
-        df = df.reindex(columns=["state", "date", "value", "rejection_reason"])
+        df = df.reindex(columns=["state_fips", "state", "date", "value", "rejection_reason"])
     else:
         #reindexs without rejection reason
-        df = df.reindex(columns=["state", "date", "value",])
+        df = df.reindex(columns=["state_fips", "state", "date", "value",])
 
 
 

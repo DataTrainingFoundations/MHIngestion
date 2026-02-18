@@ -4,4 +4,3 @@
 #ignore log files
 *.log
 __pycache__/
-*.log
