@@ -1,22 +1,19 @@
 import pandas as pd
 import logging
 
-
 # Logger for the Ingestion 
 logger = logging.getLogger(__name__)
 
-def retrieve_data(df):
+def retrieve_data_api(df):
 
-    # Normalize column names so your
+    # Normalize column names 
     df = df.copy()
     df.columns = [c.strip().lower().replace(" ", "_") for c in df.columns]
     logger.info(f"Normalized columns: {list(df.columns)}")
 
     # These fields cant be null
     REQUIRED_FIELDS = [
-        "indicator", "group", "state", "subgroup", "phase",
-        "time_period", "time_period_label",
-        "time_period_start_date", "time_period_end_date"
+        'series_id', 'year', 'period', 'period_name', 'value'
     ]
 
     def is_null(series: pd.Series) -> pd.Series:
@@ -32,29 +29,24 @@ def retrieve_data(df):
         else:
             missing_required |= is_null(df[col])
 
-    # looks for suppression = 1 and phase = -1
-    suppression = (df.get("suppression_flag", pd.Series(0, index=df.index)) == 1.0)
-    phase = (df.get("phase", pd.Series("", index=df.index)).astype(str).str.strip() == "-1")
-
+    # looks for Period = M13
+    period = (df.get("period", pd.Series(0, index=df.index)) == "M13")
+    
     # Rejected if any reject condition
-    rejected = missing_required | suppression | phase
+    rejected = missing_required | period
 
     rejected_df = df[rejected].copy()
 
     #anything that doesn't meet the rejected conditions becomes valid
     valid_df = df[~rejected].copy()
-    # Remove the suppression flag column as it is no longer necessary
-    valid_df.drop(columns=['suppression_flag'], inplace=True)
     
     # Adds rejection reasons
     def reason_for_row(row) -> str:
         missing = [c for c in REQUIRED_FIELDS if c not in row.index or pd.isna(row[c]) or str(row[c]).strip() == ""]
         if missing:
             return f"missing required field(s): {', '.join(missing)}"
-        if row.get("suppression_flag", 0) == 1.0:
-            return "suppression flag = 1"
-        if str(row.get("phase", "")).strip() == "-1":
-            return "phase = -1"
+        if row.get("period", 0) == "M13":
+            return "Period = M13"
         return "unknown"
     
     rejected_df["rejection_reason"] = rejected_df.apply(reason_for_row, axis=1)
@@ -64,4 +56,3 @@ def retrieve_data(df):
     logger.info(f"Rejected {len(rejected_df.index)} rows")
 
     return valid_df, rejected_df
-    

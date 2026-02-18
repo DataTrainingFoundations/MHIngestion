@@ -1,5 +1,6 @@
 import logging
 from ingestion import *
+from api_ingestion import*
 # from db import *
 from db.streamlit_db import *
 from pathlib import Path
@@ -41,4 +42,26 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # main()
+    # Logger for the Ingestion 
+    Path("logs").mkdir(exist_ok=True)
+
+    logging.basicConfig(
+        filename="logs/ingestion.log",
+        filemode="a",
+        format="%(process)d - %(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        datefmt="%d-%b-%y %H:%M:%S",
+        level=logging.DEBUG
+    )
+
+    logger = logging.getLogger("main")
+    logger.info("Ingestion pipeline starting")
+    PROJECT_ROOT = Path(__file__).resolve().parent
+    data_path = PROJECT_ROOT / "data" / "unemployment_data.json"
+    df = read_json(data_path)
+    valid, rejected = retrieve_data_api(df)
+    valid = clean_data_api(valid)
+    print(valid.head)
+    print(valid.columns)
+    print(valid.dtypes)
+    

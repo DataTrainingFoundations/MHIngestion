@@ -2310,3 +2310,17 @@
 25176 - 16-Feb-26 15:50:38 - DBlogger - Succesfully inserted 9914 rows into database
 25176 - 16-Feb-26 15:50:38 - DBlogger - Succesfully inserted 490 rows into rejected database
 25176 - 16-Feb-26 15:50:38 - DBlogger - Successfully closed DB connection
+17968 - 18-Feb-26 10:05:36 - main - Ingestion pipeline starting
+17968 - 18-Feb-26 10:05:36 - api_ingestion.Validator - Normalized columns: ['series_id', 'year', 'period', 'period_name', 'value']
+17968 - 18-Feb-26 10:05:36 - api_ingestion.Validator - Successfully validated 1800 rows
+17968 - 18-Feb-26 10:05:36 - api_ingestion.Validator - Rejected 0 rows
+17968 - 18-Feb-26 10:05:36 - api_ingestion.Cleaner - Starting data cleaning step
+17968 - 18-Feb-26 10:05:36 - api_ingestion.Cleaner - Removed 0 duplicate rows
+17968 - 18-Feb-26 10:05:36 - api_ingestion.Cleaner - Converted column value to numeric
+17968 - 18-Feb-26 10:05:36 - api_ingestion.Cleaner - Converted column year to numeric
+17968 - 18-Feb-26 10:05:36 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+17968 - 18-Feb-26 10:05:36 - api_ingestion.Cleaner - Created column date and converted it to datetime
+17968 - 18-Feb-26 10:05:36 - api_ingestion.Cleaner - Converted series_id to string
+17968 - 18-Feb-26 10:05:36 - api_ingestion.Cleaner - Created temporary column state_fips
+17968 - 18-Feb-26 10:05:36 - api_ingestion.Cleaner - dropped columns series_id, state_fips, year, month, and period_name
+17968 - 18-Feb-26 10:05:36 - api_ingestion.Cleaner - Completed data cleaning.
