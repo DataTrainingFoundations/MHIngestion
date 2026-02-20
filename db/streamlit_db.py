@@ -80,7 +80,7 @@ def starify():
         s.execute(text("DROP TABLE IF EXISTS time_dim"))
         s.execute(text("DROP TABLE IF EXISTS confidence_dim"))
         s.execute(text("""CREATE TABLE category_dim (category_key INT AUTO_INCREMENT PRIMARY KEY, \
-                            category TEXT, subcategory TEXT)"""))
+                            category TEXT, subcategory TEXT, state TEXT)"""))
         s.execute(text("""CREATE TABLE time_dim (time_key INT AUTO_INCREMENT PRIMARY KEY, \
                             phase NUMERIC, time_period INT, time_period_label TEXT, time_period_start_date DATE, \
                             time_period_end_date DATE)"""))
@@ -91,8 +91,8 @@ def starify():
                             FOREIGN KEY (category_key) REFERENCES category_dim(category_key), \
                             FOREIGN KEY (time_key) REFERENCES time_dim(time_key), \
                             FOREIGN KEY (confidence_key) REFERENCES confidence_dim(confidence_key))"""))
-        s.execute(text("""INSERT INTO category_dim (category, subcategory) \
-                            SELECT DISTINCT category, subcategory FROM mental_health"""))
+        s.execute(text("""INSERT INTO category_dim (category, subcategory, state) \
+                            SELECT DISTINCT category, subcategory, state FROM mental_health"""))
         s.execute(text("""INSERT INTO time_dim (phase, time_period, time_period_label, time_period_start_date, \
                             time_period_end_date) \
                             SELECT DISTINCT phase, time_period, time_period_label, time_period_start_date, \
@@ -102,7 +102,7 @@ def starify():
         s.execute(text("""INSERT INTO fact_mental_health (category_key, time_key, confidence_key, indicator, value) \
                             SELECT ca.category_key, t.time_key, co.confidence_key, m.indicator, m.value \
                             FROM mental_health m \
-                            JOIN category_dim ca ON (m.category = ca.category AND m.subcategory = ca.subcategory) \
+                            JOIN category_dim ca ON (m.category = ca.category AND m.subcategory = ca.subcategory AND m.state = ca.state) \
                             JOIN time_dim t ON (m.time_period_start_date = t.time_period_start_date AND \
                             m.time_period_end_date = t.time_period_end_date) \
                             JOIN confidence_dim co ON (m.lowci = co.lowci AND m.highci = co.highci)"""))
