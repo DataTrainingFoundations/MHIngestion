@@ -23,6 +23,7 @@
 11728 - 10-Feb-26 09:56:05 - ingestion.Reader - INFO - Read 10404 rows from C:\DataTrainingProjects\Project1\DataIngestionProject\data\Mental_Health_DB.csv
 11728 - 10-Feb-26 09:56:05 - ingestion.Validator - INFO - Successfully validated 9914 rows
 11728 - 10-Feb-26 09:56:05 - ingestion.Validator - INFO - Rejected 490 rows
+<<<<<<< HEAD
 24164 - 16-Feb-26 11:06:42 - main - INFO - Ingestion pipeline starting
 24164 - 16-Feb-26 11:06:42 - ingestion.Reader - DEBUG - Attempting to read CSV at C:\DataTrainingProjects\Project1\DataIngestionProject\data\Mental_Health_DB.csv
 24164 - 16-Feb-26 11:06:42 - ingestion.Reader - INFO - Read 10404 rows from C:\DataTrainingProjects\Project1\DataIngestionProject\data\Mental_Health_DB.csv
@@ -107,3 +108,59 @@
 8940 - 16-Feb-26 11:07:58 - ingestion.Cleaner - DEBUG - Converted suppression_flag to numeric
 8940 - 16-Feb-26 11:07:58 - ingestion.Cleaner - DEBUG - Converted rejection_reason to string
 8940 - 16-Feb-26 11:07:58 - ingestion.Cleaner - INFO - Completed data cleaning.
+=======
+9888 - 10-Feb-26 10:08:30 - main - INFO - Ingestion pipeline starting
+9888 - 10-Feb-26 10:08:30 - ingestion.Reader - DEBUG - Attempting to read CSV at C:\DataTrainingProjects\Project1\DataIngestionProject\data\Mental_Health_DB.csv
+9888 - 10-Feb-26 10:08:30 - ingestion.Reader - INFO - Read 10404 rows from C:\DataTrainingProjects\Project1\DataIngestionProject\data\Mental_Health_DB.csv
+9888 - 10-Feb-26 10:08:30 - ingestion.Validator - INFO - Successfully validated 9914 rows
+9888 - 10-Feb-26 10:08:30 - ingestion.Validator - INFO - Rejected 490 rows
+1576 - 10-Feb-26 10:08:40 - main - INFO - Ingestion pipeline starting
+1576 - 10-Feb-26 10:08:40 - ingestion.Reader - DEBUG - Attempting to read CSV at C:\DataTrainingProjects\Project1\DataIngestionProject\data\Mental_Health_DB.csv
+1576 - 10-Feb-26 10:08:40 - ingestion.Reader - INFO - Read 10404 rows from C:\DataTrainingProjects\Project1\DataIngestionProject\data\Mental_Health_DB.csv
+1576 - 10-Feb-26 10:08:40 - ingestion.Validator - INFO - Successfully validated 9914 rows
+1576 - 10-Feb-26 10:08:40 - ingestion.Validator - INFO - Rejected 490 rows
+15792 - 10-Feb-26 10:18:56 - main - INFO - Ingestion pipeline starting
+15792 - 10-Feb-26 10:18:56 - ingestion.Reader - DEBUG - Attempting to read CSV at C:\DataTrainingProjects\Project1\DataIngestionProject\data\Mental_Health_DB.csv
+15792 - 10-Feb-26 10:18:56 - ingestion.Reader - INFO - Read 10404 rows from C:\DataTrainingProjects\Project1\DataIngestionProject\data\Mental_Health_DB.csv
+15792 - 10-Feb-26 10:18:56 - ingestion.Validator - INFO - Successfully validated 9914 rows
+15792 - 10-Feb-26 10:18:56 - ingestion.Validator - INFO - Rejected 490 rows
+15792 - 10-Feb-26 10:18:56 - ingestion.Cleaner - INFO - Starting data cleaning step
+15792 - 10-Feb-26 10:18:56 - ingestion.Cleaner - DEBUG - Removed 0 duplicate rows
+15792 - 10-Feb-26 10:18:56 - ingestion.Cleaner - DEBUG - Converted column 'phase' to numeric
+15792 - 10-Feb-26 10:18:56 - ingestion.Cleaner - DEBUG - Converted column 'value' to numeric
+15792 - 10-Feb-26 10:18:56 - ingestion.Cleaner - DEBUG - Converted column 'lowci' to numeric
+15792 - 10-Feb-26 10:18:56 - ingestion.Cleaner - DEBUG - Converted column 'highci' to numeric
+15792 - 10-Feb-26 10:18:56 - ingestion.Cleaner - DEBUG - Converted 'time period' to nullable Int64
+15792 - 10-Feb-26 10:18:56 - ingestion.Cleaner - DEBUG - Converted 'time period start date' to datetime
+15792 - 10-Feb-26 10:18:56 - ingestion.Cleaner - DEBUG - Converted 'time period end date' to datetime
+15792 - 10-Feb-26 10:18:56 - ingestion.Cleaner - DEBUG - Converted 'indicator' to string
+15792 - 10-Feb-26 10:18:56 - ingestion.Cleaner - DEBUG - Converted 'group' to string
+15792 - 10-Feb-26 10:18:56 - ingestion.Cleaner - DEBUG - Converted 'state' to string
+15792 - 10-Feb-26 10:18:56 - ingestion.Cleaner - DEBUG - Converted 'subgroup' to string
+15792 - 10-Feb-26 10:18:56 - ingestion.Cleaner - DEBUG - Converted 'time period label' to string
+15792 - 10-Feb-26 10:18:56 - ingestion.Cleaner - DEBUG - Converted 'confidence interval' to string
+15792 - 10-Feb-26 10:18:56 - ingestion.Cleaner - DEBUG - Converted 'quartile range' to string
+15792 - 10-Feb-26 10:18:56 - ingestion.Cleaner - INFO - Completed data cleaning. Rows before: 9914, after: 9914
+2768 - 10-Feb-26 13:24:15 - main - INFO - Ingestion pipeline starting
+2768 - 10-Feb-26 13:24:15 - ingestion.Reader - DEBUG - Attempting to read CSV at C:\DataTrainingProjects\Project1\DataIngestionProject\data\Mental_Health_DB.csv
+2768 - 10-Feb-26 13:24:16 - ingestion.Reader - INFO - Read 10404 rows from C:\DataTrainingProjects\Project1\DataIngestionProject\data\Mental_Health_DB.csv
+2768 - 10-Feb-26 13:24:16 - ingestion.Validator - INFO - Successfully validated 9914 rows
+2768 - 10-Feb-26 13:24:16 - ingestion.Validator - INFO - Rejected 490 rows
+2768 - 10-Feb-26 13:24:16 - ingestion.Cleaner - INFO - Starting data cleaning step
+2768 - 10-Feb-26 13:24:16 - ingestion.Cleaner - DEBUG - Removed 0 duplicate rows
+2768 - 10-Feb-26 13:24:16 - ingestion.Cleaner - DEBUG - Converted column 'phase' to numeric
+2768 - 10-Feb-26 13:24:16 - ingestion.Cleaner - DEBUG - Converted column 'value' to numeric
+2768 - 10-Feb-26 13:24:16 - ingestion.Cleaner - DEBUG - Converted column 'lowci' to numeric
+2768 - 10-Feb-26 13:24:16 - ingestion.Cleaner - DEBUG - Converted column 'highci' to numeric
+2768 - 10-Feb-26 13:24:16 - ingestion.Cleaner - DEBUG - Converted 'time period' to nullable Int64
+2768 - 10-Feb-26 13:24:16 - ingestion.Cleaner - DEBUG - Converted 'time period start date' to datetime
+2768 - 10-Feb-26 13:24:16 - ingestion.Cleaner - DEBUG - Converted 'time period end date' to datetime
+2768 - 10-Feb-26 13:24:16 - ingestion.Cleaner - DEBUG - Converted 'indicator' to string
+2768 - 10-Feb-26 13:24:16 - ingestion.Cleaner - DEBUG - Converted 'group' to string
+2768 - 10-Feb-26 13:24:16 - ingestion.Cleaner - DEBUG - Converted 'state' to string
+2768 - 10-Feb-26 13:24:16 - ingestion.Cleaner - DEBUG - Converted 'subgroup' to string
+2768 - 10-Feb-26 13:24:16 - ingestion.Cleaner - DEBUG - Converted 'time period label' to string
+2768 - 10-Feb-26 13:24:16 - ingestion.Cleaner - DEBUG - Converted 'confidence interval' to string
+2768 - 10-Feb-26 13:24:16 - ingestion.Cleaner - DEBUG - Converted 'quartile range' to string
+2768 - 10-Feb-26 13:24:16 - ingestion.Cleaner - INFO - Completed data cleaning.
+>>>>>>> 31b9628171278a5484e5161c8c4024f88c78214f
