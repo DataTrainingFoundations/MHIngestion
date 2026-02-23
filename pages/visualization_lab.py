@@ -3,13 +3,13 @@ import io
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import textwrap
 
 st.set_page_config(page_title="Visualization Lab", layout="wide")
 st.title("Visualization Lab")
 st.caption("Visualize mental health data.")
 
 # --- Load your DataFrame ---
-# replace with your actual MySQL connection if needed
 conn = st.connection("mysql", type="sql")
 df = conn.query("SELECT * FROM mental_health")
 
@@ -20,73 +20,69 @@ if df.empty:
 st.write("Preview (first 20 rows)")
 st.dataframe(df.head(20), use_container_width=True)
 
+# --- Detect indicator column (first column) ---
+indicator_col = df.columns[0]
+indicators = df[indicator_col].unique().tolist()
+selected_indicator = st.selectbox("Select Indicator", indicators)
+
+# Filter dataframe by selected indicator
+df_filtered = df[df[indicator_col] == selected_indicator].copy()
+
 # --- Detect numeric columns for Y-axis ---
-numeric_cols = df.select_dtypes(include="number").columns.tolist()
-all_cols = df.columns.tolist()
+numeric_cols = df_filtered.select_dtypes(include="number").columns.tolist()
+# For X-axis, allow non-numeric columns too
+all_cols = df_filtered.columns.tolist()
+all_cols.remove(indicator_col)  # remove the constant indicator from X options
 
 # Sidebar for X/Y selection
 x_axis = st.selectbox("X-axis column", options=all_cols, index=0)
 y_axis = st.selectbox("Y-axis column (numeric)", options=numeric_cols, index=0)
 
-# Chart type selection
+# Downsampling
+step_size = st.slider(
+    "Sample every N rows",
+    min_value=1, max_value=50,
+    value=1, step=1,
+    help="Downsample large datasets to reduce visual clutter."
+)
+df_sampled = df_filtered.iloc[::step_size].copy()
+
+# --- Wrap long labels ---
+def wrap_labels(label, width=20):
+    return "\n".join(textwrap.wrap(str(label), width))
+
+df_sampled[x_axis] = df_sampled[x_axis].apply(lambda x: wrap_labels(x, width=20))
+
+# --- Chart type selection ---
 chart_type = st.selectbox(
     "Chart type",
     ["Bar", "Line", "Scatter", "Histogram", "Box", "Cumulative Sum"]
 )
 
-# Downsampling
-step_size = st.slider(
-    "Sample every N rows",
-    min_value=1, max_value=50, value=1, step=1,
-    help="Downsample large datasets to reduce visual clutter."
-)
-df_sampled = df.iloc[::step_size].copy()
-
-# --- Wrap long labels for readability ---
-def wrap_text(val, width=25):
-    val = str(val)
-    return "\n".join([val[i:i+width] for i in range(0, len(val), width)])
-
-df_sampled[x_axis] = df_sampled[x_axis].apply(wrap_text)
-
 # --- Plot ---
-fig, ax = plt.subplots(figsize=(10,5))
+fig, ax = plt.subplots(figsize=(12,6))
 
 if chart_type == "Bar":
     means = df_sampled.groupby(x_axis)[y_axis].mean()
     ax.bar(means.index, means.values)
-    ax.set_xlabel(x_axis)
-    ax.set_ylabel(y_axis)
-    ax.tick_params(axis="x", rotation=0)
-
 elif chart_type == "Line":
     ax.plot(df_sampled[x_axis], df_sampled[y_axis], marker='o')
-    ax.set_xlabel(x_axis)
-    ax.set_ylabel(y_axis)
-    ax.tick_params(axis="x", rotation=0)
-
 elif chart_type == "Scatter":
     ax.scatter(df_sampled[x_axis], df_sampled[y_axis])
-    ax.set_xlabel(x_axis)
-    ax.set_ylabel(y_axis)
-    ax.tick_params(axis="x", rotation=0)
-
 elif chart_type == "Histogram":
     ax.hist(df_sampled[y_axis], bins=20, alpha=0.85, edgecolor="white")
-    ax.set_xlabel(y_axis)
-    ax.set_ylabel("Count")
-
 elif chart_type == "Box":
     ax.boxplot(df_sampled[y_axis], labels=[x_axis])
-    ax.set_xlabel(x_axis)
-    ax.set_ylabel(y_axis)
-
 else:  # Cumulative sum
     ax.plot(df_sampled[x_axis], df_sampled[y_axis].cumsum())
-    ax.set_xlabel(x_axis)
-    ax.set_ylabel(f"Cumulative {y_axis}")
 
+ax.set_xlabel(x_axis)
+ax.set_ylabel(y_axis if chart_type != "Cumulative Sum" else f"Cumulative {y_axis}")
+
+# --- Rotate and align X-axis labels ---
+plt.setp(ax.get_xticklabels(), rotation=45, ha="right")  # rotate 45 degrees
 ax.grid(alpha=0.2)
+
 st.pyplot(fig, use_container_width=True)
 
 # --- Download PNG ---
