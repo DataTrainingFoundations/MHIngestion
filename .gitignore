@@ -4,3 +4,5 @@
 #ignore log files
 *.log
 __pycache__/
+#ignore env and vscode files
+.*/
