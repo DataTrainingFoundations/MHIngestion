@@ -2324,3 +2324,362 @@
 17968 - 18-Feb-26 10:05:36 - api_ingestion.Cleaner - Created temporary column state_fips
 17968 - 18-Feb-26 10:05:36 - api_ingestion.Cleaner - dropped columns series_id, state_fips, year, month, and period_name
 17968 - 18-Feb-26 10:05:36 - api_ingestion.Cleaner - Completed data cleaning.
+39124 - 19-Feb-26 09:33:59 - main - Ingestion pipeline starting
+39124 - 19-Feb-26 09:33:59 - api_ingestion.Validator - Normalized columns: ['series_id', 'year', 'period', 'period_name', 'value']
+39124 - 19-Feb-26 09:33:59 - api_ingestion.Validator - Successfully validated 1800 rows
+39124 - 19-Feb-26 09:33:59 - api_ingestion.Validator - Rejected 0 rows
+39124 - 19-Feb-26 09:33:59 - api_ingestion.Cleaner - Starting data cleaning step
+39124 - 19-Feb-26 09:33:59 - api_ingestion.Cleaner - Removed 0 duplicate rows
+39124 - 19-Feb-26 09:33:59 - api_ingestion.Cleaner - Converted column value to numeric
+39124 - 19-Feb-26 09:33:59 - api_ingestion.Cleaner - Converted column year to numeric
+39124 - 19-Feb-26 09:33:59 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+39124 - 19-Feb-26 09:33:59 - api_ingestion.Cleaner - Created column date and converted it to datetime
+39124 - 19-Feb-26 09:33:59 - api_ingestion.Cleaner - Converted series_id to string
+39124 - 19-Feb-26 09:33:59 - api_ingestion.Cleaner - Created column state_fips 
+39124 - 19-Feb-26 09:33:59 - api_ingestion.Cleaner - Created column state and converted it to string
+39124 - 19-Feb-26 09:33:59 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+39124 - 19-Feb-26 09:33:59 - api_ingestion.Cleaner - Completed data cleaning.
+39124 - 19-Feb-26 09:34:00 - DBlogger - Succesfully inserted 1800 rows into database
+39124 - 19-Feb-26 09:34:00 - DBlogger - Successfully closed DB connection
+35060 - 19-Feb-26 09:34:02 - main - Ingestion pipeline starting
+35060 - 19-Feb-26 09:34:02 - api_ingestion.Validator - Normalized columns: ['series_id', 'year', 'period', 'period_name', 'value']
+35060 - 19-Feb-26 09:34:02 - api_ingestion.Validator - Successfully validated 1800 rows
+35060 - 19-Feb-26 09:34:02 - api_ingestion.Validator - Rejected 0 rows
+35060 - 19-Feb-26 09:34:02 - api_ingestion.Cleaner - Starting data cleaning step
+35060 - 19-Feb-26 09:34:02 - api_ingestion.Cleaner - Removed 0 duplicate rows
+35060 - 19-Feb-26 09:34:02 - api_ingestion.Cleaner - Converted column value to numeric
+35060 - 19-Feb-26 09:34:02 - api_ingestion.Cleaner - Converted column year to numeric
+35060 - 19-Feb-26 09:34:02 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+35060 - 19-Feb-26 09:34:02 - api_ingestion.Cleaner - Created column date and converted it to datetime
+35060 - 19-Feb-26 09:34:02 - api_ingestion.Cleaner - Converted series_id to string
+35060 - 19-Feb-26 09:34:02 - api_ingestion.Cleaner - Created column state_fips 
+35060 - 19-Feb-26 09:34:02 - api_ingestion.Cleaner - Created column state and converted it to string
+35060 - 19-Feb-26 09:34:02 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+35060 - 19-Feb-26 09:34:02 - api_ingestion.Cleaner - Completed data cleaning.
+35060 - 19-Feb-26 09:34:02 - DBlogger - Error occurred during data insertion: (mysql.connector.errors.IntegrityError) 1062 (23000): Duplicate entry '01-2022-12-01' for key 'unemployment.uq_state_date'
+[SQL: INSERT INTO unemployment (state_fips, state, date, unemployment_rate)                         VALUES (%(state_fips)s, %(state)s, %(date)s, %(value)s)]
+[parameters: [{'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-12-01 00:00:00'), 'value': 2.0}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-11-01 00:00:00'), 'value': 2.2}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-10-01 00:00:00'), 'value': 2.4}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-09-01 00:00:00'), 'value': 2.4}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-08-01 00:00:00'), 'value': 2.9}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-07-01 00:00:00'), 'value': 2.9}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-06-01 00:00:00'), 'value': 3.0}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-05-01 00:00:00'), 'value': 2.2}  ... displaying 10 of 1800 total bound parameter sets ...  {'state_fips': '56', 'state': 'Wyoming', 'date': Timestamp('2020-02-01 00:00:00'), 'value': 5.0}, {'state_fips': '56', 'state': 'Wyoming', 'date': Timestamp('2020-01-01 00:00:00'), 'value': 5.1}]]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+35060 - 19-Feb-26 09:34:02 - DBlogger - Successfully closed DB connection
+35076 - 19-Feb-26 13:14:38 - api_ingestion.Reader - Requesting BLS data | series=50 | years=2022-2023
+35076 - 19-Feb-26 13:14:38 - urllib3.connectionpool - Starting new HTTPS connection (1): api.bls.gov:443
+35076 - 19-Feb-26 13:14:39 - urllib3.connectionpool - https://api.bls.gov:443 "POST /publicAPI/v2/timeseries/data/ HTTP/1.1" 200 None
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Reader - BLS fetch successful | rows=1200
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Reader - {'source': 'bls_laus_api', 'series_requested': 50, 'rows_returned': 1200, 'start_year': 2022, 'end_year': 2023}
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Validator - Normalized columns: ['series_id', 'year', 'period', 'period_name', 'value']
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Validator - Successfully validated 1200 rows
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Validator - Rejected 0 rows
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Cleaner - Starting data cleaning step
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Cleaner - Removed 0 duplicate rows
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Cleaner - Converted column value to numeric
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Cleaner - Converted column year to numeric
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Cleaner - Created column date and converted it to datetime
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Cleaner - Converted series_id to string
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Cleaner - Created column state_fips 
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Cleaner - Created column state and converted it to string
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Cleaner - Completed data cleaning.
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Cleaner - Starting data cleaning step
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Cleaner - Removed 0 duplicate rows
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Cleaner - Converted column value to numeric
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Cleaner - Converted column year to numeric
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Cleaner - Created column date and converted it to datetime
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Cleaner - Converted series_id to string
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Cleaner - Created column state_fips 
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Cleaner - Created column state and converted it to string
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Cleaner - Converted rejection_reason to string
+35076 - 19-Feb-26 13:14:39 - api_ingestion.Cleaner - Completed data cleaning.
+35076 - 19-Feb-26 13:14:39 - DBlogger - Error occurred during unemployment upsert: Textual SQL expression '\n                    INSE...' should be explicitly declared as text('\n                    INSE...')
+35076 - 19-Feb-26 13:14:39 - __main__ - BLS API Extraction Failed
+Traceback (most recent call last):
+  File "c:\DataTrainingProjects\Project1\DataIngestionProject\run_unemployment_scraper.py", line 72, in run_unemployment_scraper
+    streamlit_api_db.upsert_valid_unemployment_data(valid_window)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "c:\DataTrainingProjects\Project1\DataIngestionProject\db\streamlit_api_db.py", line 82, in upsert_valid_unemployment_data
+    s.execute(upsert_sql, data_to_insert)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\orm\session.py", line 2147, in _execute_internal
+    statement = coercions.expect(roles.StatementRole, statement)
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\sql\coercions.py", line 396, in expect
+    resolved = impl._literal_coercion(
+        element, argname=argname, **kw
+    )
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\sql\coercions.py", line 622, in _literal_coercion
+    return self._text_coercion(element, argname, **kw)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\sql\coercions.py", line 615, in _text_coercion
+    return _no_text_coercion(element, argname)
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\sql\coercions.py", line 585, in _no_text_coercion
+    raise exc_cls(
+    ...<7 lines>...
+    ) from err
+sqlalchemy.exc.ArgumentError: Textual SQL expression '\n                    INSE...' should be explicitly declared as text('\n                    INSE...')
+21120 - 19-Feb-26 14:21:26 - api_ingestion.Reader - Requesting BLS data | series=50 | years=2022-2023
+21120 - 19-Feb-26 14:21:26 - urllib3.connectionpool - Starting new HTTPS connection (1): api.bls.gov:443
+21120 - 19-Feb-26 14:21:27 - urllib3.connectionpool - https://api.bls.gov:443 "POST /publicAPI/v2/timeseries/data/ HTTP/1.1" 200 None
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Reader - BLS fetch successful | rows=1200
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Reader - {'source': 'bls_laus_api', 'series_requested': 50, 'rows_returned': 1200, 'start_year': 2022, 'end_year': 2023}
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Validator - Normalized columns: ['series_id', 'year', 'period', 'period_name', 'value']
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Validator - Successfully validated 1200 rows
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Validator - Rejected 0 rows
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Cleaner - Starting data cleaning step
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Cleaner - Removed 0 duplicate rows
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Cleaner - Converted column value to numeric
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Cleaner - Converted column year to numeric
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Cleaner - Created column date and converted it to datetime
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Cleaner - Converted series_id to string
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Cleaner - Created column state_fips 
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Cleaner - Created column state and converted it to string
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Cleaner - Completed data cleaning.
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Cleaner - Starting data cleaning step
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Cleaner - Removed 0 duplicate rows
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Cleaner - Converted column value to numeric
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Cleaner - Converted column year to numeric
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Cleaner - Created column date and converted it to datetime
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Cleaner - Converted series_id to string
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Cleaner - Created column state_fips 
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Cleaner - Created column state and converted it to string
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Cleaner - Converted rejection_reason to string
+21120 - 19-Feb-26 14:21:27 - api_ingestion.Cleaner - Completed data cleaning.
+21120 - 19-Feb-26 14:21:27 - DBlogger - Error occurred during unemployment upsert: (mysql.connector.errors.ProgrammingError) 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s, %s, %s, %s),(%s, %s, %s, %s),(%s, %s, %s, %s),(%s, %s, %s, %s),(%s, %s, %s, ' at line 2
+[SQL: 
+                    INSERT INTO stg_unemployment (state_fips, state, date, unemployment_rate)
+                    VALUES (%s, %s, %s, %s)
+                    ON DUPLICATE KEY UPDATE
+                    unemployment_rate = VALUES(%(value)s)
+                    ]
+[parameters: [{'value': 2.6}, {'value': 2.0}, {'value': 2.2}, {'value': 2.4}, {'value': 2.4}, {'value': 2.9}, {'value': 2.9}, {'value': 3.0}  ... displaying 10 of 600 total bound parameter sets ...  {'value': 3.8}, {'value': 4.1}]]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+21120 - 19-Feb-26 14:21:27 - __main__ - BLS API Extraction Failed
+Traceback (most recent call last):
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\mysql\connector\connection_cext.py", line 772, in cmd_query
+    self._cmysql.query(
+    ~~~~~~~~~~~~~~~~~~^
+        query,
+        ^^^^^^
+    ...<3 lines>...
+        query_attrs=self.query_attrs,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+_mysql_connector.MySQLInterfaceError: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s, %s, %s, %s),(%s, %s, %s, %s),(%s, %s, %s, %s),(%s, %s, %s, %s),(%s, %s, %s, ' at line 2
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1936, in _exec_single_context
+    self.dialect.do_executemany(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor,
+        ^^^^^^^
+    ...<2 lines>...
+        context,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\default.py", line 949, in do_executemany
+    cursor.executemany(statement, parameters)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\mysql\connector\cursor_cext.py", line 473, in executemany
+    return self.execute(cast(str, stmt))
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\mysql\connector\cursor_cext.py", line 353, in execute
+    self._connection.cmd_query(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._stmt_partition["mappable_stmt"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        raw_as_string=self._raw_as_string,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\mysql\connector\connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+        err.errno, msg=err.msg, sqlstate=err.sqlstate
+    ) from err
+mysql.connector.errors.ProgrammingError: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s, %s, %s, %s),(%s, %s, %s, %s),(%s, %s, %s, %s),(%s, %s, %s, %s),(%s, %s, %s, ' at line 2
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\DataTrainingProjects\Project1\DataIngestionProject\run_unemployment_scraper.py", line 72, in run_unemployment_scraper
+    streamlit_api_db.upsert_valid_unemployment_data(valid_window)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "c:\DataTrainingProjects\Project1\DataIngestionProject\db\streamlit_api_db.py", line 82, in upsert_valid_unemployment_data
+    s.execute(upsert_sql, data_to_insert)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\orm\session.py", line 2351, in execute
+    return self._execute_internal(
+           ~~~~~~~~~~~~~~~~~~~~~~^
+        statement,
+        ^^^^^^^^^^
+    ...<4 lines>...
+        _add_event=_add_event,
+        ^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\orm\session.py", line 2258, in _execute_internal
+    result = conn.execute(
+        statement, params or {}, execution_options=execution_options
+    )
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1419, in execute
+    return meth(
+        self,
+        distilled_parameters,
+        execution_options or NO_OPTIONS,
+    )
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\sql\elements.py", line 527, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self, distilled_params, execution_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1641, in _execute_clauseelement
+    ret = self._execute_context(
+        dialect,
+    ...<8 lines>...
+        cache_hit=cache_hit,
+    )
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1846, in _execute_context
+    return self._exec_single_context(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~^
+        dialect, context, statement, parameters
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1986, in _exec_single_context
+    self._handle_dbapi_exception(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        e, str_statement, effective_parameters, cursor, context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 2363, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\base.py", line 1936, in _exec_single_context
+    self.dialect.do_executemany(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        cursor,
+        ^^^^^^^
+    ...<2 lines>...
+        context,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\sqlalchemy\engine\default.py", line 949, in do_executemany
+    cursor.executemany(statement, parameters)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\mysql\connector\cursor_cext.py", line 473, in executemany
+    return self.execute(cast(str, stmt))
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\mysql\connector\cursor_cext.py", line 353, in execute
+    self._connection.cmd_query(
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        self._stmt_partition["mappable_stmt"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<2 lines>...
+        raw_as_string=self._raw_as_string,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\mysql\connector\opentelemetry\context_propagation.py", line 97, in wrapper
+    return method(cnx, *args, **kwargs)
+  File "C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\mysql\connector\connection_cext.py", line 781, in cmd_query
+    raise get_mysql_exception(
+        err.errno, msg=err.msg, sqlstate=err.sqlstate
+    ) from err
+sqlalchemy.exc.ProgrammingError: (mysql.connector.errors.ProgrammingError) 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '%s, %s, %s, %s),(%s, %s, %s, %s),(%s, %s, %s, %s),(%s, %s, %s, %s),(%s, %s, %s, ' at line 2
+[SQL: 
+                    INSERT INTO stg_unemployment (state_fips, state, date, unemployment_rate)
+                    VALUES (%s, %s, %s, %s)
+                    ON DUPLICATE KEY UPDATE
+                    unemployment_rate = VALUES(%(value)s)
+                    ]
+[parameters: [{'value': 2.6}, {'value': 2.0}, {'value': 2.2}, {'value': 2.4}, {'value': 2.4}, {'value': 2.9}, {'value': 2.9}, {'value': 3.0}  ... displaying 10 of 600 total bound parameter sets ...  {'value': 3.8}, {'value': 4.1}]]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+39972 - 23-Feb-26 09:19:49 - api_ingestion.Reader - Requesting BLS data | series=50 | years=2022-2023
+39972 - 23-Feb-26 09:19:49 - urllib3.connectionpool - Starting new HTTPS connection (1): api.bls.gov:443
+39972 - 23-Feb-26 09:19:50 - urllib3.connectionpool - https://api.bls.gov:443 "POST /publicAPI/v2/timeseries/data/ HTTP/1.1" 200 None
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Reader - BLS fetch successful | rows=1200
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Reader - {'source': 'bls_laus_api', 'series_requested': 50, 'rows_returned': 1200, 'start_year': 2022, 'end_year': 2023}
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Validator - Normalized columns: ['series_id', 'year', 'period', 'period_name', 'value']
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Validator - Successfully validated 1200 rows
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Validator - Rejected 0 rows
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Cleaner - Starting data cleaning step
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Cleaner - Removed 0 duplicate rows
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Cleaner - Converted column value to numeric
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Cleaner - Converted column year to numeric
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Cleaner - Created column date and converted it to datetime
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Cleaner - Converted series_id to string
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Cleaner - Created column state_fips 
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Cleaner - Created column state and converted it to string
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Cleaner - Completed data cleaning.
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Cleaner - Starting data cleaning step
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Cleaner - Removed 0 duplicate rows
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Cleaner - Converted column value to numeric
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Cleaner - Converted column year to numeric
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Cleaner - Created column date and converted it to datetime
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Cleaner - Converted series_id to string
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Cleaner - Created column state_fips 
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Cleaner - Created column state and converted it to string
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Cleaner - Converted rejection_reason to string
+39972 - 23-Feb-26 09:19:50 - api_ingestion.Cleaner - Completed data cleaning.
+39972 - 23-Feb-26 09:19:50 - DBlogger - Upserted/updated 600 rows into unemployment
+39972 - 23-Feb-26 09:19:50 - DBlogger - Successfully closed DB connection
+79488 - 23-Feb-26 09:21:31 - api_ingestion.Reader - Requesting BLS data | series=50 | years=2022-2023
+79488 - 23-Feb-26 09:21:31 - urllib3.connectionpool - Starting new HTTPS connection (1): api.bls.gov:443
+79488 - 23-Feb-26 09:21:32 - urllib3.connectionpool - https://api.bls.gov:443 "POST /publicAPI/v2/timeseries/data/ HTTP/1.1" 200 None
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Reader - BLS fetch successful | rows=1200
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Reader - {'source': 'bls_laus_api', 'series_requested': 50, 'rows_returned': 1200, 'start_year': 2022, 'end_year': 2023}
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Validator - Normalized columns: ['series_id', 'year', 'period', 'period_name', 'value']
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Validator - Successfully validated 1200 rows
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Validator - Rejected 0 rows
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Cleaner - Starting data cleaning step
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Cleaner - Removed 0 duplicate rows
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Cleaner - Converted column value to numeric
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Cleaner - Converted column year to numeric
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Cleaner - Created column date and converted it to datetime
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Cleaner - Converted series_id to string
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Cleaner - Created column state_fips 
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Cleaner - Created column state and converted it to string
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Cleaner - Completed data cleaning.
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Cleaner - Starting data cleaning step
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Cleaner - Removed 0 duplicate rows
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Cleaner - Converted column value to numeric
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Cleaner - Converted column year to numeric
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Cleaner - Created column date and converted it to datetime
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Cleaner - Converted series_id to string
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Cleaner - Created column state_fips 
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Cleaner - Created column state and converted it to string
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Cleaner - Converted rejection_reason to string
+79488 - 23-Feb-26 09:21:32 - api_ingestion.Cleaner - Completed data cleaning.
+79488 - 23-Feb-26 09:21:32 - DBlogger - Upserted/updated 600 rows into unemployment
+79488 - 23-Feb-26 09:21:32 - DBlogger - Successfully closed DB connection

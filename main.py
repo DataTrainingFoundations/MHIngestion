@@ -60,7 +60,7 @@ if __name__ == "__main__":
     df = read_json(data_path)
     valid, rejected = retrieve_data_api(df)
     valid = clean_data_api(valid)
-    print(valid.head)
-    print(valid.columns)
-    print(valid.dtypes)
+    start_unemployment_DB()
+    insert_valid_unemployment_data(valid)
+    close_connection()
     
