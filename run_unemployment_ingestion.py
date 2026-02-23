@@ -72,7 +72,7 @@ def run_unemployment_ingestion():
         streamlit_api_db.upsert_valid_unemployment_data(valid_window)
 
         # close database
-        streamlit_api_db.close_connection()
+        streamlit_api_db.close_connection_api()
     except Exception as e:
         logger.exception("BLS API Extraction Failed")
 

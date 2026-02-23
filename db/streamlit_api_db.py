@@ -48,7 +48,7 @@ def insert_rejected_data(df):
     except Exception as err:
         logger.error(f"Error occurred during data insertion: {err}")
 
-def close_connection():
+def close_connection_api():
     try:
         connection.close()
         logger.info("Successfully closed DB connection")

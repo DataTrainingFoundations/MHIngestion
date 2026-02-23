@@ -20,6 +20,8 @@ def main():
     logger = logging.getLogger("main")
     logger.info("Ingestion pipeline starting")
 
+    #checks to see if the 
+
     # our mental health db
     PROJECT_ROOT = Path(__file__).resolve().parent
     data_path = PROJECT_ROOT / "data" / "Mental_Health_DB.csv"
@@ -65,5 +67,5 @@ if __name__ == "__main__":
     valid = clean_data_api(valid)
     start_unemployment_DB()
     insert_valid_unemployment_data(valid)
-    close_connection()
+    close_connection_api()
     
