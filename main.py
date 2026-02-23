@@ -59,7 +59,7 @@ if __name__ == "__main__":
     logger = logging.getLogger("main")
     logger.info("Ingestion pipeline starting")
     PROJECT_ROOT = Path(__file__).resolve().parent
-    data_path = PROJECT_ROOT / "data" / "unemployment_data.json"
+    data_path = PROJECT_ROOT / "data" / "unemployment_data_seed.json"
     df = read_json(data_path)
     valid, rejected = retrieve_data_api(df)
     valid = clean_data_api(valid)
