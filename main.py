@@ -37,16 +37,15 @@ def main():
     start_DB()
     insert_valid_data(valid)
     insert_rejected_data(rejected)
-    db_results = read_valid_data()
-    print(db_results)
+    # db_results = read_valid_data()
+    # print(db_results)
     starify()
-    close_connection()
     #loads valid into database
     #loader method goes here
 
 
 if __name__ == "__main__":
-    # main()
+    main()
     # Logger for the Ingestion 
     Path("logs").mkdir(exist_ok=True)
 
@@ -67,5 +66,8 @@ if __name__ == "__main__":
     valid = clean_data_api(valid)
     start_unemployment_DB()
     insert_valid_unemployment_data(valid)
+    join_results = mh_unemployement_join()
+    print(join_results)
+    close_connection()
     close_connection_api()
     

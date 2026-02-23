@@ -2994,3 +2994,540 @@
 25256 - 20-Feb-26 11:19:36 - DBlogger - Succesfully inserted 9914 rows into database
 25256 - 20-Feb-26 11:19:36 - DBlogger - Succesfully inserted 490 rows into rejected database
 25256 - 20-Feb-26 11:19:50 - DBlogger - Successfully closed DB connection
+31264 - 23-Feb-26 10:04:51 - main - Ingestion pipeline starting
+31264 - 23-Feb-26 10:04:51 - api_ingestion.Validator - Normalized columns: ['series_id', 'year', 'period', 'period_name', 'value']
+31264 - 23-Feb-26 10:04:51 - api_ingestion.Validator - Successfully validated 1800 rows
+31264 - 23-Feb-26 10:04:51 - api_ingestion.Validator - Rejected 0 rows
+31264 - 23-Feb-26 10:04:51 - api_ingestion.Cleaner - Starting data cleaning step
+31264 - 23-Feb-26 10:04:51 - api_ingestion.Cleaner - Removed 0 duplicate rows
+31264 - 23-Feb-26 10:04:51 - api_ingestion.Cleaner - Converted column value to numeric
+31264 - 23-Feb-26 10:04:51 - api_ingestion.Cleaner - Converted column year to numeric
+31264 - 23-Feb-26 10:04:51 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+31264 - 23-Feb-26 10:04:51 - api_ingestion.Cleaner - Created column date and converted it to datetime
+31264 - 23-Feb-26 10:04:51 - api_ingestion.Cleaner - Converted series_id to string
+31264 - 23-Feb-26 10:04:51 - api_ingestion.Cleaner - Created column state_fips 
+31264 - 23-Feb-26 10:04:51 - api_ingestion.Cleaner - Created column state and converted it to string
+31264 - 23-Feb-26 10:04:51 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+31264 - 23-Feb-26 10:04:51 - api_ingestion.Cleaner - Completed data cleaning.
+31264 - 23-Feb-26 10:04:53 - DBlogger - Succesfully inserted 1800 rows into database
+31264 - 23-Feb-26 10:04:53 - DBlogger - Successfully closed DB connection
+9932 - 23-Feb-26 10:25:01 - main - Ingestion pipeline starting
+9932 - 23-Feb-26 10:25:01 - ingestion.Reader - Attempting to read CSV at C:\Users\armin\OneDrive\Desktop\Developer\MHIngestion\data\Mental_Health_DB.csv
+9932 - 23-Feb-26 10:25:01 - ingestion.Reader - Read 10404 rows from C:\Users\armin\OneDrive\Desktop\Developer\MHIngestion\data\Mental_Health_DB.csv
+9932 - 23-Feb-26 10:25:01 - ingestion.Validator - Normalized columns: ['indicator', 'group', 'state', 'subgroup', 'phase', 'time_period', 'time_period_label', 'time_period_start_date', 'time_period_end_date', 'value', 'lowci', 'highci', 'confidence_interval', 'quartile_range', 'suppression_flag']
+9932 - 23-Feb-26 10:25:01 - ingestion.Validator - Successfully validated 9914 rows
+9932 - 23-Feb-26 10:25:01 - ingestion.Validator - Rejected 490 rows
+9932 - 23-Feb-26 10:25:01 - ingestion.Cleaner - Starting data cleaning step
+9932 - 23-Feb-26 10:25:01 - ingestion.Cleaner - Removed 0 duplicate rows
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted column 'phase' to numeric
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted column 'value' to numeric
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted column 'lowci' to numeric
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted column 'highci' to numeric
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted 'time_period' to nullable Int64
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted 'time_period_start_date' to datetime
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted 'time_period_end_date' to datetime
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted 'indicator' to string
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted 'group' to string
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted 'state' to string
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted 'subgroup' to string
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted 'time_period_label' to string
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted 'confidence_interval' to string
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted 'quartile_range' to string
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Completed data cleaning.
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Starting data cleaning step
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Removed 0 duplicate rows
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted column 'phase' to numeric
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted column 'value' to numeric
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted column 'lowci' to numeric
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted column 'highci' to numeric
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted 'time_period' to nullable Int64
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted 'time_period_start_date' to datetime
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted 'time_period_end_date' to datetime
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted 'indicator' to string
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted 'group' to string
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted 'state' to string
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted 'subgroup' to string
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted 'time_period_label' to string
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted 'confidence_interval' to string
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted 'quartile_range' to string
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted suppression_flag to numeric
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Converted rejection_reason to string
+9932 - 23-Feb-26 10:25:02 - ingestion.Cleaner - Completed data cleaning.
+9932 - 23-Feb-26 10:25:03 - DBlogger - Successfully connected to database
+9932 - 23-Feb-26 10:25:04 - DBlogger - Succesfully inserted 9914 rows into database
+9932 - 23-Feb-26 10:25:04 - DBlogger - Error occurred during data insertion: 'NoneType' object has no attribute 'session'
+9932 - 23-Feb-26 10:25:19 - main - Ingestion pipeline starting
+9932 - 23-Feb-26 10:25:19 - api_ingestion.Validator - Normalized columns: ['series_id', 'year', 'period', 'period_name', 'value']
+9932 - 23-Feb-26 10:25:19 - api_ingestion.Validator - Successfully validated 1800 rows
+9932 - 23-Feb-26 10:25:19 - api_ingestion.Validator - Rejected 0 rows
+9932 - 23-Feb-26 10:25:19 - api_ingestion.Cleaner - Starting data cleaning step
+9932 - 23-Feb-26 10:25:19 - api_ingestion.Cleaner - Removed 0 duplicate rows
+9932 - 23-Feb-26 10:25:19 - api_ingestion.Cleaner - Converted column value to numeric
+9932 - 23-Feb-26 10:25:19 - api_ingestion.Cleaner - Converted column year to numeric
+9932 - 23-Feb-26 10:25:19 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+9932 - 23-Feb-26 10:25:19 - api_ingestion.Cleaner - Created column date and converted it to datetime
+9932 - 23-Feb-26 10:25:19 - api_ingestion.Cleaner - Converted series_id to string
+9932 - 23-Feb-26 10:25:19 - api_ingestion.Cleaner - Created column state_fips 
+9932 - 23-Feb-26 10:25:19 - api_ingestion.Cleaner - Created column state and converted it to string
+9932 - 23-Feb-26 10:25:19 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+9932 - 23-Feb-26 10:25:19 - api_ingestion.Cleaner - Completed data cleaning.
+9932 - 23-Feb-26 10:25:19 - DBlogger - Error occurred during data insertion: (mysql.connector.errors.IntegrityError) 1062 (23000): Duplicate entry '01-2022-12-01' for key 'unemployment.uq_state_date'
+[SQL: INSERT INTO unemployment (state_fips, state, date, unemployment_rate)                         VALUES (%(state_fips)s, %(state)s, %(date)s, %(value)s)]
+[parameters: [{'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-12-01 00:00:00'), 'value': 2.0}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-11-01 00:00:00'), 'value': 2.2}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-10-01 00:00:00'), 'value': 2.4}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-09-01 00:00:00'), 'value': 2.4}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-08-01 00:00:00'), 'value': 2.9}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-07-01 00:00:00'), 'value': 2.9}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-06-01 00:00:00'), 'value': 3.0}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-05-01 00:00:00'), 'value': 2.2}  ... displaying 10 of 1800 total bound parameter sets ...  {'state_fips': '56', 'state': 'Wyoming', 'date': Timestamp('2020-02-01 00:00:00'), 'value': 5.0}, {'state_fips': '56', 'state': 'Wyoming', 'date': Timestamp('2020-01-01 00:00:00'), 'value': 5.1}]]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+14340 - 23-Feb-26 10:28:30 - main - Ingestion pipeline starting
+14340 - 23-Feb-26 10:28:30 - ingestion.Reader - Attempting to read CSV at C:\Users\armin\OneDrive\Desktop\Developer\MHIngestion\data\Mental_Health_DB.csv
+14340 - 23-Feb-26 10:28:30 - ingestion.Reader - Read 10404 rows from C:\Users\armin\OneDrive\Desktop\Developer\MHIngestion\data\Mental_Health_DB.csv
+14340 - 23-Feb-26 10:28:30 - ingestion.Validator - Normalized columns: ['indicator', 'group', 'state', 'subgroup', 'phase', 'time_period', 'time_period_label', 'time_period_start_date', 'time_period_end_date', 'value', 'lowci', 'highci', 'confidence_interval', 'quartile_range', 'suppression_flag']
+14340 - 23-Feb-26 10:28:30 - ingestion.Validator - Successfully validated 9914 rows
+14340 - 23-Feb-26 10:28:30 - ingestion.Validator - Rejected 490 rows
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Starting data cleaning step
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Removed 0 duplicate rows
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted column 'phase' to numeric
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted column 'value' to numeric
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted column 'lowci' to numeric
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted column 'highci' to numeric
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted 'time_period' to nullable Int64
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted 'time_period_start_date' to datetime
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted 'time_period_end_date' to datetime
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted 'indicator' to string
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted 'group' to string
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted 'state' to string
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted 'subgroup' to string
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted 'time_period_label' to string
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted 'confidence_interval' to string
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted 'quartile_range' to string
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Completed data cleaning.
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Starting data cleaning step
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Removed 0 duplicate rows
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted column 'phase' to numeric
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted column 'value' to numeric
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted column 'lowci' to numeric
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted column 'highci' to numeric
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted 'time_period' to nullable Int64
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted 'time_period_start_date' to datetime
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted 'time_period_end_date' to datetime
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted 'indicator' to string
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted 'group' to string
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted 'state' to string
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted 'subgroup' to string
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted 'time_period_label' to string
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted 'confidence_interval' to string
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted 'quartile_range' to string
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted suppression_flag to numeric
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Converted rejection_reason to string
+14340 - 23-Feb-26 10:28:30 - ingestion.Cleaner - Completed data cleaning.
+14340 - 23-Feb-26 10:28:31 - DBlogger - Successfully connected to database
+14340 - 23-Feb-26 10:28:33 - DBlogger - Succesfully inserted 9914 rows into database
+14340 - 23-Feb-26 10:28:33 - DBlogger - Error occurred during data insertion: 'NoneType' object has no attribute 'session'
+14340 - 23-Feb-26 10:28:48 - main - Ingestion pipeline starting
+14340 - 23-Feb-26 10:28:48 - api_ingestion.Validator - Normalized columns: ['series_id', 'year', 'period', 'period_name', 'value']
+14340 - 23-Feb-26 10:28:48 - api_ingestion.Validator - Successfully validated 1800 rows
+14340 - 23-Feb-26 10:28:48 - api_ingestion.Validator - Rejected 0 rows
+14340 - 23-Feb-26 10:28:48 - api_ingestion.Cleaner - Starting data cleaning step
+14340 - 23-Feb-26 10:28:48 - api_ingestion.Cleaner - Removed 0 duplicate rows
+14340 - 23-Feb-26 10:28:48 - api_ingestion.Cleaner - Converted column value to numeric
+14340 - 23-Feb-26 10:28:48 - api_ingestion.Cleaner - Converted column year to numeric
+14340 - 23-Feb-26 10:28:48 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+14340 - 23-Feb-26 10:28:48 - api_ingestion.Cleaner - Created column date and converted it to datetime
+14340 - 23-Feb-26 10:28:48 - api_ingestion.Cleaner - Converted series_id to string
+14340 - 23-Feb-26 10:28:48 - api_ingestion.Cleaner - Created column state_fips 
+14340 - 23-Feb-26 10:28:48 - api_ingestion.Cleaner - Created column state and converted it to string
+14340 - 23-Feb-26 10:28:48 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+14340 - 23-Feb-26 10:28:48 - api_ingestion.Cleaner - Completed data cleaning.
+14340 - 23-Feb-26 10:28:48 - DBlogger - Error occurred during data insertion: (mysql.connector.errors.IntegrityError) 1062 (23000): Duplicate entry '01-2022-12-01' for key 'unemployment.uq_state_date'
+[SQL: INSERT INTO unemployment (state_fips, state, date, unemployment_rate)                         VALUES (%(state_fips)s, %(state)s, %(date)s, %(value)s)]
+[parameters: [{'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-12-01 00:00:00'), 'value': 2.0}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-11-01 00:00:00'), 'value': 2.2}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-10-01 00:00:00'), 'value': 2.4}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-09-01 00:00:00'), 'value': 2.4}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-08-01 00:00:00'), 'value': 2.9}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-07-01 00:00:00'), 'value': 2.9}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-06-01 00:00:00'), 'value': 3.0}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-05-01 00:00:00'), 'value': 2.2}  ... displaying 10 of 1800 total bound parameter sets ...  {'state_fips': '56', 'state': 'Wyoming', 'date': Timestamp('2020-02-01 00:00:00'), 'value': 5.0}, {'state_fips': '56', 'state': 'Wyoming', 'date': Timestamp('2020-01-01 00:00:00'), 'value': 5.1}]]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+14340 - 23-Feb-26 10:32:27 - DBlogger - Successfully closed DB connection
+14340 - 23-Feb-26 10:32:27 - DBlogger - Successfully closed DB connection
+8696 - 23-Feb-26 10:39:38 - main - Ingestion pipeline starting
+8696 - 23-Feb-26 10:39:38 - ingestion.Reader - Attempting to read CSV at C:\Users\armin\OneDrive\Desktop\Developer\MHIngestion\data\Mental_Health_DB.csv
+8696 - 23-Feb-26 10:39:38 - ingestion.Reader - Read 10404 rows from C:\Users\armin\OneDrive\Desktop\Developer\MHIngestion\data\Mental_Health_DB.csv
+8696 - 23-Feb-26 10:39:38 - ingestion.Validator - Normalized columns: ['indicator', 'group', 'state', 'subgroup', 'phase', 'time_period', 'time_period_label', 'time_period_start_date', 'time_period_end_date', 'value', 'lowci', 'highci', 'confidence_interval', 'quartile_range', 'suppression_flag']
+8696 - 23-Feb-26 10:39:38 - ingestion.Validator - Successfully validated 9914 rows
+8696 - 23-Feb-26 10:39:38 - ingestion.Validator - Rejected 490 rows
+8696 - 23-Feb-26 10:39:38 - ingestion.Cleaner - Starting data cleaning step
+8696 - 23-Feb-26 10:39:38 - ingestion.Cleaner - Removed 0 duplicate rows
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted column 'phase' to numeric
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted column 'value' to numeric
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted column 'lowci' to numeric
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted column 'highci' to numeric
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted 'time_period' to nullable Int64
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted 'time_period_start_date' to datetime
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted 'time_period_end_date' to datetime
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted 'indicator' to string
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted 'group' to string
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted 'state' to string
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted 'subgroup' to string
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted 'time_period_label' to string
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted 'confidence_interval' to string
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted 'quartile_range' to string
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Completed data cleaning.
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Starting data cleaning step
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Removed 0 duplicate rows
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted column 'phase' to numeric
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted column 'value' to numeric
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted column 'lowci' to numeric
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted column 'highci' to numeric
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted 'time_period' to nullable Int64
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted 'time_period_start_date' to datetime
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted 'time_period_end_date' to datetime
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted 'indicator' to string
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted 'group' to string
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted 'state' to string
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted 'subgroup' to string
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted 'time_period_label' to string
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted 'confidence_interval' to string
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted 'quartile_range' to string
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted suppression_flag to numeric
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Converted rejection_reason to string
+8696 - 23-Feb-26 10:39:39 - ingestion.Cleaner - Completed data cleaning.
+8696 - 23-Feb-26 10:39:40 - DBlogger - Successfully connected to database
+8696 - 23-Feb-26 10:39:41 - DBlogger - Succesfully inserted 9914 rows into database
+8696 - 23-Feb-26 10:39:41 - DBlogger - Error occurred during data insertion: 'NoneType' object has no attribute 'session'
+8696 - 23-Feb-26 10:39:55 - main - Ingestion pipeline starting
+8696 - 23-Feb-26 10:39:55 - api_ingestion.Validator - Normalized columns: ['series_id', 'year', 'period', 'period_name', 'value']
+8696 - 23-Feb-26 10:39:55 - api_ingestion.Validator - Successfully validated 1800 rows
+8696 - 23-Feb-26 10:39:55 - api_ingestion.Validator - Rejected 0 rows
+8696 - 23-Feb-26 10:39:55 - api_ingestion.Cleaner - Starting data cleaning step
+8696 - 23-Feb-26 10:39:55 - api_ingestion.Cleaner - Removed 0 duplicate rows
+8696 - 23-Feb-26 10:39:55 - api_ingestion.Cleaner - Converted column value to numeric
+8696 - 23-Feb-26 10:39:55 - api_ingestion.Cleaner - Converted column year to numeric
+8696 - 23-Feb-26 10:39:55 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+8696 - 23-Feb-26 10:39:55 - api_ingestion.Cleaner - Created column date and converted it to datetime
+8696 - 23-Feb-26 10:39:55 - api_ingestion.Cleaner - Converted series_id to string
+8696 - 23-Feb-26 10:39:55 - api_ingestion.Cleaner - Created column state_fips 
+8696 - 23-Feb-26 10:39:55 - api_ingestion.Cleaner - Created column state and converted it to string
+8696 - 23-Feb-26 10:39:55 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+8696 - 23-Feb-26 10:39:55 - api_ingestion.Cleaner - Completed data cleaning.
+8696 - 23-Feb-26 10:39:55 - DBlogger - Error occurred during data insertion: (mysql.connector.errors.IntegrityError) 1062 (23000): Duplicate entry '01-2022-12-01' for key 'unemployment.uq_state_date'
+[SQL: INSERT INTO unemployment (state_fips, state, date, unemployment_rate)                         VALUES (%(state_fips)s, %(state)s, %(date)s, %(value)s)]
+[parameters: [{'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-12-01 00:00:00'), 'value': 2.0}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-11-01 00:00:00'), 'value': 2.2}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-10-01 00:00:00'), 'value': 2.4}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-09-01 00:00:00'), 'value': 2.4}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-08-01 00:00:00'), 'value': 2.9}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-07-01 00:00:00'), 'value': 2.9}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-06-01 00:00:00'), 'value': 3.0}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-05-01 00:00:00'), 'value': 2.2}  ... displaying 10 of 1800 total bound parameter sets ...  {'state_fips': '56', 'state': 'Wyoming', 'date': Timestamp('2020-02-01 00:00:00'), 'value': 5.0}, {'state_fips': '56', 'state': 'Wyoming', 'date': Timestamp('2020-01-01 00:00:00'), 'value': 5.1}]]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+32160 - 23-Feb-26 10:41:20 - main - Ingestion pipeline starting
+32160 - 23-Feb-26 10:41:20 - ingestion.Reader - Attempting to read CSV at C:\Users\armin\OneDrive\Desktop\Developer\MHIngestion\data\Mental_Health_DB.csv
+32160 - 23-Feb-26 10:41:20 - ingestion.Reader - Read 10404 rows from C:\Users\armin\OneDrive\Desktop\Developer\MHIngestion\data\Mental_Health_DB.csv
+32160 - 23-Feb-26 10:41:20 - ingestion.Validator - Normalized columns: ['indicator', 'group', 'state', 'subgroup', 'phase', 'time_period', 'time_period_label', 'time_period_start_date', 'time_period_end_date', 'value', 'lowci', 'highci', 'confidence_interval', 'quartile_range', 'suppression_flag']
+32160 - 23-Feb-26 10:41:21 - ingestion.Validator - Successfully validated 9914 rows
+32160 - 23-Feb-26 10:41:21 - ingestion.Validator - Rejected 490 rows
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Starting data cleaning step
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Removed 0 duplicate rows
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted column 'phase' to numeric
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted column 'value' to numeric
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted column 'lowci' to numeric
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted column 'highci' to numeric
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted 'time_period' to nullable Int64
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted 'time_period_start_date' to datetime
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted 'time_period_end_date' to datetime
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted 'indicator' to string
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted 'group' to string
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted 'state' to string
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted 'subgroup' to string
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted 'time_period_label' to string
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted 'confidence_interval' to string
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted 'quartile_range' to string
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Completed data cleaning.
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Starting data cleaning step
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Removed 0 duplicate rows
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted column 'phase' to numeric
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted column 'value' to numeric
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted column 'lowci' to numeric
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted column 'highci' to numeric
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted 'time_period' to nullable Int64
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted 'time_period_start_date' to datetime
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted 'time_period_end_date' to datetime
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted 'indicator' to string
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted 'group' to string
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted 'state' to string
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted 'subgroup' to string
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted 'time_period_label' to string
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted 'confidence_interval' to string
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted 'quartile_range' to string
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted suppression_flag to numeric
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Converted rejection_reason to string
+32160 - 23-Feb-26 10:41:21 - ingestion.Cleaner - Completed data cleaning.
+32160 - 23-Feb-26 10:41:21 - DBlogger - Successfully connected to database
+32160 - 23-Feb-26 10:41:22 - DBlogger - Succesfully inserted 9914 rows into database
+32160 - 23-Feb-26 10:41:22 - DBlogger - Error occurred during data insertion: 'NoneType' object has no attribute 'session'
+32160 - 23-Feb-26 10:41:35 - main - Ingestion pipeline starting
+32160 - 23-Feb-26 10:41:35 - api_ingestion.Validator - Normalized columns: ['series_id', 'year', 'period', 'period_name', 'value']
+32160 - 23-Feb-26 10:41:35 - api_ingestion.Validator - Successfully validated 1800 rows
+32160 - 23-Feb-26 10:41:35 - api_ingestion.Validator - Rejected 0 rows
+32160 - 23-Feb-26 10:41:35 - api_ingestion.Cleaner - Starting data cleaning step
+32160 - 23-Feb-26 10:41:35 - api_ingestion.Cleaner - Removed 0 duplicate rows
+32160 - 23-Feb-26 10:41:35 - api_ingestion.Cleaner - Converted column value to numeric
+32160 - 23-Feb-26 10:41:35 - api_ingestion.Cleaner - Converted column year to numeric
+32160 - 23-Feb-26 10:41:35 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+32160 - 23-Feb-26 10:41:35 - api_ingestion.Cleaner - Created column date and converted it to datetime
+32160 - 23-Feb-26 10:41:35 - api_ingestion.Cleaner - Converted series_id to string
+32160 - 23-Feb-26 10:41:35 - api_ingestion.Cleaner - Created column state_fips 
+32160 - 23-Feb-26 10:41:35 - api_ingestion.Cleaner - Created column state and converted it to string
+32160 - 23-Feb-26 10:41:35 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+32160 - 23-Feb-26 10:41:35 - api_ingestion.Cleaner - Completed data cleaning.
+32160 - 23-Feb-26 10:41:35 - DBlogger - Error occurred during data insertion: (mysql.connector.errors.IntegrityError) 1062 (23000): Duplicate entry '01-2022-12-01' for key 'unemployment.uq_state_date'
+[SQL: INSERT INTO unemployment (state_fips, state, date, unemployment_rate)                         VALUES (%(state_fips)s, %(state)s, %(date)s, %(value)s)]
+[parameters: [{'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-12-01 00:00:00'), 'value': 2.0}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-11-01 00:00:00'), 'value': 2.2}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-10-01 00:00:00'), 'value': 2.4}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-09-01 00:00:00'), 'value': 2.4}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-08-01 00:00:00'), 'value': 2.9}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-07-01 00:00:00'), 'value': 2.9}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-06-01 00:00:00'), 'value': 3.0}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-05-01 00:00:00'), 'value': 2.2}  ... displaying 10 of 1800 total bound parameter sets ...  {'state_fips': '56', 'state': 'Wyoming', 'date': Timestamp('2020-02-01 00:00:00'), 'value': 5.0}, {'state_fips': '56', 'state': 'Wyoming', 'date': Timestamp('2020-01-01 00:00:00'), 'value': 5.1}]]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+18016 - 23-Feb-26 10:41:43 - main - Ingestion pipeline starting
+18016 - 23-Feb-26 10:41:43 - ingestion.Reader - Attempting to read CSV at C:\Users\armin\OneDrive\Desktop\Developer\MHIngestion\data\Mental_Health_DB.csv
+18016 - 23-Feb-26 10:41:43 - ingestion.Reader - Read 10404 rows from C:\Users\armin\OneDrive\Desktop\Developer\MHIngestion\data\Mental_Health_DB.csv
+18016 - 23-Feb-26 10:41:43 - ingestion.Validator - Normalized columns: ['indicator', 'group', 'state', 'subgroup', 'phase', 'time_period', 'time_period_label', 'time_period_start_date', 'time_period_end_date', 'value', 'lowci', 'highci', 'confidence_interval', 'quartile_range', 'suppression_flag']
+18016 - 23-Feb-26 10:41:43 - ingestion.Validator - Successfully validated 9914 rows
+18016 - 23-Feb-26 10:41:43 - ingestion.Validator - Rejected 490 rows
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Starting data cleaning step
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Removed 0 duplicate rows
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted column 'phase' to numeric
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted column 'value' to numeric
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted column 'lowci' to numeric
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted column 'highci' to numeric
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted 'time_period' to nullable Int64
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted 'time_period_start_date' to datetime
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted 'time_period_end_date' to datetime
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted 'indicator' to string
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted 'group' to string
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted 'state' to string
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted 'subgroup' to string
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted 'time_period_label' to string
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted 'confidence_interval' to string
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted 'quartile_range' to string
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Completed data cleaning.
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Starting data cleaning step
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Removed 0 duplicate rows
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted column 'phase' to numeric
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted column 'value' to numeric
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted column 'lowci' to numeric
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted column 'highci' to numeric
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted 'time_period' to nullable Int64
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted 'time_period_start_date' to datetime
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted 'time_period_end_date' to datetime
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted 'indicator' to string
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted 'group' to string
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted 'state' to string
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted 'subgroup' to string
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted 'time_period_label' to string
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted 'confidence_interval' to string
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted 'quartile_range' to string
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted suppression_flag to numeric
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Converted rejection_reason to string
+18016 - 23-Feb-26 10:41:43 - ingestion.Cleaner - Completed data cleaning.
+18016 - 23-Feb-26 10:41:44 - DBlogger - Successfully connected to database
+18016 - 23-Feb-26 10:41:45 - DBlogger - Succesfully inserted 9914 rows into database
+18016 - 23-Feb-26 10:41:45 - DBlogger - Error occurred during data insertion: 'NoneType' object has no attribute 'session'
+18016 - 23-Feb-26 10:41:58 - main - Ingestion pipeline starting
+18016 - 23-Feb-26 10:41:58 - api_ingestion.Validator - Normalized columns: ['series_id', 'year', 'period', 'period_name', 'value']
+18016 - 23-Feb-26 10:41:58 - api_ingestion.Validator - Successfully validated 1800 rows
+18016 - 23-Feb-26 10:41:58 - api_ingestion.Validator - Rejected 0 rows
+18016 - 23-Feb-26 10:41:58 - api_ingestion.Cleaner - Starting data cleaning step
+18016 - 23-Feb-26 10:41:58 - api_ingestion.Cleaner - Removed 0 duplicate rows
+18016 - 23-Feb-26 10:41:58 - api_ingestion.Cleaner - Converted column value to numeric
+18016 - 23-Feb-26 10:41:58 - api_ingestion.Cleaner - Converted column year to numeric
+18016 - 23-Feb-26 10:41:58 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+18016 - 23-Feb-26 10:41:58 - api_ingestion.Cleaner - Created column date and converted it to datetime
+18016 - 23-Feb-26 10:41:58 - api_ingestion.Cleaner - Converted series_id to string
+18016 - 23-Feb-26 10:41:58 - api_ingestion.Cleaner - Created column state_fips 
+18016 - 23-Feb-26 10:41:58 - api_ingestion.Cleaner - Created column state and converted it to string
+18016 - 23-Feb-26 10:41:58 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+18016 - 23-Feb-26 10:41:58 - api_ingestion.Cleaner - Completed data cleaning.
+18016 - 23-Feb-26 10:41:58 - DBlogger - Error occurred during data insertion: (mysql.connector.errors.IntegrityError) 1062 (23000): Duplicate entry '01-2022-12-01' for key 'unemployment.uq_state_date'
+[SQL: INSERT INTO unemployment (state_fips, state, date, unemployment_rate)                         VALUES (%(state_fips)s, %(state)s, %(date)s, %(value)s)]
+[parameters: [{'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-12-01 00:00:00'), 'value': 2.0}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-11-01 00:00:00'), 'value': 2.2}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-10-01 00:00:00'), 'value': 2.4}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-09-01 00:00:00'), 'value': 2.4}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-08-01 00:00:00'), 'value': 2.9}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-07-01 00:00:00'), 'value': 2.9}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-06-01 00:00:00'), 'value': 3.0}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-05-01 00:00:00'), 'value': 2.2}  ... displaying 10 of 1800 total bound parameter sets ...  {'state_fips': '56', 'state': 'Wyoming', 'date': Timestamp('2020-02-01 00:00:00'), 'value': 5.0}, {'state_fips': '56', 'state': 'Wyoming', 'date': Timestamp('2020-01-01 00:00:00'), 'value': 5.1}]]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+29392 - 23-Feb-26 10:43:04 - main - Ingestion pipeline starting
+29392 - 23-Feb-26 10:43:04 - ingestion.Reader - Attempting to read CSV at C:\Users\armin\OneDrive\Desktop\Developer\MHIngestion\data\Mental_Health_DB.csv
+29392 - 23-Feb-26 10:43:05 - ingestion.Reader - Read 10404 rows from C:\Users\armin\OneDrive\Desktop\Developer\MHIngestion\data\Mental_Health_DB.csv
+29392 - 23-Feb-26 10:43:05 - ingestion.Validator - Normalized columns: ['indicator', 'group', 'state', 'subgroup', 'phase', 'time_period', 'time_period_label', 'time_period_start_date', 'time_period_end_date', 'value', 'lowci', 'highci', 'confidence_interval', 'quartile_range', 'suppression_flag']
+29392 - 23-Feb-26 10:43:05 - ingestion.Validator - Successfully validated 9914 rows
+29392 - 23-Feb-26 10:43:05 - ingestion.Validator - Rejected 490 rows
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Starting data cleaning step
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Removed 0 duplicate rows
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted column 'phase' to numeric
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted column 'value' to numeric
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted column 'lowci' to numeric
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted column 'highci' to numeric
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted 'time_period' to nullable Int64
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted 'time_period_start_date' to datetime
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted 'time_period_end_date' to datetime
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted 'indicator' to string
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted 'group' to string
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted 'state' to string
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted 'subgroup' to string
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted 'time_period_label' to string
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted 'confidence_interval' to string
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted 'quartile_range' to string
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Completed data cleaning.
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Starting data cleaning step
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Removed 0 duplicate rows
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted column 'phase' to numeric
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted column 'value' to numeric
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted column 'lowci' to numeric
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted column 'highci' to numeric
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted 'time_period' to nullable Int64
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted 'time_period_start_date' to datetime
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted 'time_period_end_date' to datetime
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted 'indicator' to string
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted 'group' to string
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted 'state' to string
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted 'subgroup' to string
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted 'time_period_label' to string
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted 'confidence_interval' to string
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted 'quartile_range' to string
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted suppression_flag to numeric
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Converted rejection_reason to string
+29392 - 23-Feb-26 10:43:05 - ingestion.Cleaner - Completed data cleaning.
+29392 - 23-Feb-26 10:43:05 - DBlogger - Successfully connected to database
+29392 - 23-Feb-26 10:43:06 - DBlogger - Succesfully inserted 9914 rows into database
+29392 - 23-Feb-26 10:43:06 - DBlogger - Error occurred during data insertion: 'NoneType' object has no attribute 'session'
+29392 - 23-Feb-26 10:43:20 - main - Ingestion pipeline starting
+29392 - 23-Feb-26 10:43:20 - api_ingestion.Validator - Normalized columns: ['series_id', 'year', 'period', 'period_name', 'value']
+29392 - 23-Feb-26 10:43:20 - api_ingestion.Validator - Successfully validated 1800 rows
+29392 - 23-Feb-26 10:43:20 - api_ingestion.Validator - Rejected 0 rows
+29392 - 23-Feb-26 10:43:20 - api_ingestion.Cleaner - Starting data cleaning step
+29392 - 23-Feb-26 10:43:20 - api_ingestion.Cleaner - Removed 0 duplicate rows
+29392 - 23-Feb-26 10:43:20 - api_ingestion.Cleaner - Converted column value to numeric
+29392 - 23-Feb-26 10:43:20 - api_ingestion.Cleaner - Converted column year to numeric
+29392 - 23-Feb-26 10:43:20 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+29392 - 23-Feb-26 10:43:20 - api_ingestion.Cleaner - Created column date and converted it to datetime
+29392 - 23-Feb-26 10:43:20 - api_ingestion.Cleaner - Converted series_id to string
+29392 - 23-Feb-26 10:43:20 - api_ingestion.Cleaner - Created column state_fips 
+29392 - 23-Feb-26 10:43:20 - api_ingestion.Cleaner - Created column state and converted it to string
+29392 - 23-Feb-26 10:43:20 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+29392 - 23-Feb-26 10:43:20 - api_ingestion.Cleaner - Completed data cleaning.
+29392 - 23-Feb-26 10:43:20 - DBlogger - Error occurred during data insertion: (mysql.connector.errors.IntegrityError) 1062 (23000): Duplicate entry '01-2022-12-01' for key 'unemployment.uq_state_date'
+[SQL: INSERT INTO unemployment (state_fips, state, date, unemployment_rate)                         VALUES (%(state_fips)s, %(state)s, %(date)s, %(value)s)]
+[parameters: [{'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-12-01 00:00:00'), 'value': 2.0}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-11-01 00:00:00'), 'value': 2.2}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-10-01 00:00:00'), 'value': 2.4}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-09-01 00:00:00'), 'value': 2.4}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-08-01 00:00:00'), 'value': 2.9}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-07-01 00:00:00'), 'value': 2.9}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-06-01 00:00:00'), 'value': 3.0}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-05-01 00:00:00'), 'value': 2.2}  ... displaying 10 of 1800 total bound parameter sets ...  {'state_fips': '56', 'state': 'Wyoming', 'date': Timestamp('2020-02-01 00:00:00'), 'value': 5.0}, {'state_fips': '56', 'state': 'Wyoming', 'date': Timestamp('2020-01-01 00:00:00'), 'value': 5.1}]]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+29392 - 23-Feb-26 10:43:28 - DBlogger - Successfully closed DB connection
+29392 - 23-Feb-26 10:43:28 - DBlogger - Successfully closed DB connection
+16860 - 23-Feb-26 10:49:37 - main - Ingestion pipeline starting
+16860 - 23-Feb-26 10:49:37 - ingestion.Reader - Attempting to read CSV at C:\Users\armin\OneDrive\Desktop\Developer\MHIngestion\data\Mental_Health_DB.csv
+16860 - 23-Feb-26 10:49:37 - ingestion.Reader - Read 10404 rows from C:\Users\armin\OneDrive\Desktop\Developer\MHIngestion\data\Mental_Health_DB.csv
+16860 - 23-Feb-26 10:49:37 - ingestion.Validator - Normalized columns: ['indicator', 'group', 'state', 'subgroup', 'phase', 'time_period', 'time_period_label', 'time_period_start_date', 'time_period_end_date', 'value', 'lowci', 'highci', 'confidence_interval', 'quartile_range', 'suppression_flag']
+16860 - 23-Feb-26 10:49:37 - ingestion.Validator - Successfully validated 9914 rows
+16860 - 23-Feb-26 10:49:37 - ingestion.Validator - Rejected 490 rows
+16860 - 23-Feb-26 10:49:37 - ingestion.Cleaner - Starting data cleaning step
+16860 - 23-Feb-26 10:49:37 - ingestion.Cleaner - Removed 0 duplicate rows
+16860 - 23-Feb-26 10:49:37 - ingestion.Cleaner - Converted column 'phase' to numeric
+16860 - 23-Feb-26 10:49:37 - ingestion.Cleaner - Converted column 'value' to numeric
+16860 - 23-Feb-26 10:49:37 - ingestion.Cleaner - Converted column 'lowci' to numeric
+16860 - 23-Feb-26 10:49:37 - ingestion.Cleaner - Converted column 'highci' to numeric
+16860 - 23-Feb-26 10:49:37 - ingestion.Cleaner - Converted 'time_period' to nullable Int64
+16860 - 23-Feb-26 10:49:37 - ingestion.Cleaner - Converted 'time_period_start_date' to datetime
+16860 - 23-Feb-26 10:49:37 - ingestion.Cleaner - Converted 'time_period_end_date' to datetime
+16860 - 23-Feb-26 10:49:37 - ingestion.Cleaner - Converted 'indicator' to string
+16860 - 23-Feb-26 10:49:37 - ingestion.Cleaner - Converted 'group' to string
+16860 - 23-Feb-26 10:49:37 - ingestion.Cleaner - Converted 'state' to string
+16860 - 23-Feb-26 10:49:37 - ingestion.Cleaner - Converted 'subgroup' to string
+16860 - 23-Feb-26 10:49:37 - ingestion.Cleaner - Converted 'time_period_label' to string
+16860 - 23-Feb-26 10:49:37 - ingestion.Cleaner - Converted 'confidence_interval' to string
+16860 - 23-Feb-26 10:49:37 - ingestion.Cleaner - Converted 'quartile_range' to string
+16860 - 23-Feb-26 10:49:37 - ingestion.Cleaner - Completed data cleaning.
+16860 - 23-Feb-26 10:49:37 - ingestion.Cleaner - Starting data cleaning step
+16860 - 23-Feb-26 10:49:37 - ingestion.Cleaner - Removed 0 duplicate rows
+16860 - 23-Feb-26 10:49:38 - ingestion.Cleaner - Converted column 'phase' to numeric
+16860 - 23-Feb-26 10:49:38 - ingestion.Cleaner - Converted column 'value' to numeric
+16860 - 23-Feb-26 10:49:38 - ingestion.Cleaner - Converted column 'lowci' to numeric
+16860 - 23-Feb-26 10:49:38 - ingestion.Cleaner - Converted column 'highci' to numeric
+16860 - 23-Feb-26 10:49:38 - ingestion.Cleaner - Converted 'time_period' to nullable Int64
+16860 - 23-Feb-26 10:49:38 - ingestion.Cleaner - Converted 'time_period_start_date' to datetime
+16860 - 23-Feb-26 10:49:38 - ingestion.Cleaner - Converted 'time_period_end_date' to datetime
+16860 - 23-Feb-26 10:49:38 - ingestion.Cleaner - Converted 'indicator' to string
+16860 - 23-Feb-26 10:49:38 - ingestion.Cleaner - Converted 'group' to string
+16860 - 23-Feb-26 10:49:38 - ingestion.Cleaner - Converted 'state' to string
+16860 - 23-Feb-26 10:49:38 - ingestion.Cleaner - Converted 'subgroup' to string
+16860 - 23-Feb-26 10:49:38 - ingestion.Cleaner - Converted 'time_period_label' to string
+16860 - 23-Feb-26 10:49:38 - ingestion.Cleaner - Converted 'confidence_interval' to string
+16860 - 23-Feb-26 10:49:38 - ingestion.Cleaner - Converted 'quartile_range' to string
+16860 - 23-Feb-26 10:49:38 - ingestion.Cleaner - Converted suppression_flag to numeric
+16860 - 23-Feb-26 10:49:38 - ingestion.Cleaner - Converted rejection_reason to string
+16860 - 23-Feb-26 10:49:38 - ingestion.Cleaner - Completed data cleaning.
+16860 - 23-Feb-26 10:49:38 - DBlogger - Successfully connected to database
+16860 - 23-Feb-26 10:49:39 - DBlogger - Succesfully inserted 9914 rows into database
+16860 - 23-Feb-26 10:49:40 - DBlogger - Error occurred during data insertion: 'NoneType' object has no attribute 'session'
+16860 - 23-Feb-26 10:49:53 - main - Ingestion pipeline starting
+16860 - 23-Feb-26 10:49:53 - api_ingestion.Validator - Normalized columns: ['series_id', 'year', 'period', 'period_name', 'value']
+16860 - 23-Feb-26 10:49:53 - api_ingestion.Validator - Successfully validated 1800 rows
+16860 - 23-Feb-26 10:49:53 - api_ingestion.Validator - Rejected 0 rows
+16860 - 23-Feb-26 10:49:53 - api_ingestion.Cleaner - Starting data cleaning step
+16860 - 23-Feb-26 10:49:53 - api_ingestion.Cleaner - Removed 0 duplicate rows
+16860 - 23-Feb-26 10:49:53 - api_ingestion.Cleaner - Converted column value to numeric
+16860 - 23-Feb-26 10:49:53 - api_ingestion.Cleaner - Converted column year to numeric
+16860 - 23-Feb-26 10:49:53 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+16860 - 23-Feb-26 10:49:53 - api_ingestion.Cleaner - Created column date and converted it to datetime
+16860 - 23-Feb-26 10:49:53 - api_ingestion.Cleaner - Converted series_id to string
+16860 - 23-Feb-26 10:49:53 - api_ingestion.Cleaner - Created column state_fips 
+16860 - 23-Feb-26 10:49:53 - api_ingestion.Cleaner - Created column state and converted it to string
+16860 - 23-Feb-26 10:49:53 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+16860 - 23-Feb-26 10:49:53 - api_ingestion.Cleaner - Completed data cleaning.
+16860 - 23-Feb-26 10:49:53 - DBlogger - Error occurred during data insertion: (mysql.connector.errors.IntegrityError) 1062 (23000): Duplicate entry '01-2022-12-01' for key 'unemployment.uq_state_date'
+[SQL: INSERT INTO unemployment (state_fips, state, date, unemployment_rate)                         VALUES (%(state_fips)s, %(state)s, %(date)s, %(value)s)]
+[parameters: [{'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-12-01 00:00:00'), 'value': 2.0}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-11-01 00:00:00'), 'value': 2.2}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-10-01 00:00:00'), 'value': 2.4}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-09-01 00:00:00'), 'value': 2.4}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-08-01 00:00:00'), 'value': 2.9}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-07-01 00:00:00'), 'value': 2.9}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-06-01 00:00:00'), 'value': 3.0}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-05-01 00:00:00'), 'value': 2.2}  ... displaying 10 of 1800 total bound parameter sets ...  {'state_fips': '56', 'state': 'Wyoming', 'date': Timestamp('2020-02-01 00:00:00'), 'value': 5.0}, {'state_fips': '56', 'state': 'Wyoming', 'date': Timestamp('2020-01-01 00:00:00'), 'value': 5.1}]]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+16860 - 23-Feb-26 10:49:56 - DBlogger - Successfully closed DB connection
+16860 - 23-Feb-26 10:49:56 - DBlogger - Successfully closed DB connection
+24180 - 23-Feb-26 10:50:57 - main - Ingestion pipeline starting
+24180 - 23-Feb-26 10:50:57 - ingestion.Reader - Attempting to read CSV at C:\Users\armin\OneDrive\Desktop\Developer\MHIngestion\data\Mental_Health_DB.csv
+24180 - 23-Feb-26 10:50:57 - ingestion.Reader - Read 10404 rows from C:\Users\armin\OneDrive\Desktop\Developer\MHIngestion\data\Mental_Health_DB.csv
+24180 - 23-Feb-26 10:50:57 - ingestion.Validator - Normalized columns: ['indicator', 'group', 'state', 'subgroup', 'phase', 'time_period', 'time_period_label', 'time_period_start_date', 'time_period_end_date', 'value', 'lowci', 'highci', 'confidence_interval', 'quartile_range', 'suppression_flag']
+24180 - 23-Feb-26 10:50:57 - ingestion.Validator - Successfully validated 9914 rows
+24180 - 23-Feb-26 10:50:57 - ingestion.Validator - Rejected 490 rows
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Starting data cleaning step
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Removed 0 duplicate rows
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted column 'phase' to numeric
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted column 'value' to numeric
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted column 'lowci' to numeric
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted column 'highci' to numeric
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted 'time_period' to nullable Int64
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted 'time_period_start_date' to datetime
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted 'time_period_end_date' to datetime
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted 'indicator' to string
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted 'group' to string
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted 'state' to string
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted 'subgroup' to string
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted 'time_period_label' to string
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted 'confidence_interval' to string
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted 'quartile_range' to string
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Completed data cleaning.
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Starting data cleaning step
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Removed 0 duplicate rows
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted column 'phase' to numeric
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted column 'value' to numeric
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted column 'lowci' to numeric
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted column 'highci' to numeric
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted 'time_period' to nullable Int64
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted 'time_period_start_date' to datetime
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted 'time_period_end_date' to datetime
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted 'indicator' to string
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted 'group' to string
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted 'state' to string
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted 'subgroup' to string
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted 'time_period_label' to string
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted 'confidence_interval' to string
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted 'quartile_range' to string
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted suppression_flag to numeric
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Converted rejection_reason to string
+24180 - 23-Feb-26 10:50:57 - ingestion.Cleaner - Completed data cleaning.
+24180 - 23-Feb-26 10:50:58 - DBlogger - Successfully connected to database
+24180 - 23-Feb-26 10:51:00 - DBlogger - Succesfully inserted 9914 rows into database
+24180 - 23-Feb-26 10:51:00 - DBlogger - Error occurred during data insertion: 'NoneType' object has no attribute 'session'
+24180 - 23-Feb-26 10:51:14 - main - Ingestion pipeline starting
+24180 - 23-Feb-26 10:51:14 - api_ingestion.Validator - Normalized columns: ['series_id', 'year', 'period', 'period_name', 'value']
+24180 - 23-Feb-26 10:51:14 - api_ingestion.Validator - Successfully validated 1800 rows
+24180 - 23-Feb-26 10:51:14 - api_ingestion.Validator - Rejected 0 rows
+24180 - 23-Feb-26 10:51:14 - api_ingestion.Cleaner - Starting data cleaning step
+24180 - 23-Feb-26 10:51:14 - api_ingestion.Cleaner - Removed 0 duplicate rows
+24180 - 23-Feb-26 10:51:14 - api_ingestion.Cleaner - Converted column value to numeric
+24180 - 23-Feb-26 10:51:14 - api_ingestion.Cleaner - Converted column year to numeric
+24180 - 23-Feb-26 10:51:14 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+24180 - 23-Feb-26 10:51:14 - api_ingestion.Cleaner - Created column date and converted it to datetime
+24180 - 23-Feb-26 10:51:14 - api_ingestion.Cleaner - Converted series_id to string
+24180 - 23-Feb-26 10:51:14 - api_ingestion.Cleaner - Created column state_fips 
+24180 - 23-Feb-26 10:51:14 - api_ingestion.Cleaner - Created column state and converted it to string
+24180 - 23-Feb-26 10:51:14 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+24180 - 23-Feb-26 10:51:14 - api_ingestion.Cleaner - Completed data cleaning.
+24180 - 23-Feb-26 10:51:14 - DBlogger - Error occurred during data insertion: (mysql.connector.errors.IntegrityError) 1062 (23000): Duplicate entry '01-2022-12-01' for key 'unemployment.uq_state_date'
+[SQL: INSERT INTO unemployment (state_fips, state, date, unemployment_rate)                         VALUES (%(state_fips)s, %(state)s, %(date)s, %(value)s)]
+[parameters: [{'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-12-01 00:00:00'), 'value': 2.0}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-11-01 00:00:00'), 'value': 2.2}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-10-01 00:00:00'), 'value': 2.4}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-09-01 00:00:00'), 'value': 2.4}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-08-01 00:00:00'), 'value': 2.9}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-07-01 00:00:00'), 'value': 2.9}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-06-01 00:00:00'), 'value': 3.0}, {'state_fips': '01', 'state': 'Alabama', 'date': Timestamp('2022-05-01 00:00:00'), 'value': 2.2}  ... displaying 10 of 1800 total bound parameter sets ...  {'state_fips': '56', 'state': 'Wyoming', 'date': Timestamp('2020-02-01 00:00:00'), 'value': 5.0}, {'state_fips': '56', 'state': 'Wyoming', 'date': Timestamp('2020-01-01 00:00:00'), 'value': 5.1}]]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+24180 - 23-Feb-26 10:51:56 - DBlogger - Successfully closed DB connection
+24180 - 23-Feb-26 10:51:56 - DBlogger - Successfully closed DB connection

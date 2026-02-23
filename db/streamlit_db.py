@@ -107,3 +107,14 @@ def starify():
                             m.time_period_end_date = t.time_period_end_date) \
                             JOIN confidence_dim co ON (m.lowci = co.lowci AND m.highci = co.highci)"""))
         s.commit()
+
+def mh_unemployement_join():
+    df = connection.query("""SELECT DISTINCT ca.state, m.indicator, t.time_period_start_date, u.date, m.value, u.unemployment_rate \
+                            FROM fact_mental_health m \
+                            JOIN category_dim ca ON m.category_key = ca.category_key \
+                            JOIN unemployment u ON ca.state = u.state \
+                            JOIN time_dim t ON (t.time_key = m.time_key AND \
+                            YEAR(t.time_period_start_date) = YEAR(u.date) AND \
+                            MONTH(t.time_period_start_date) = MONTH(u.date)) \
+                            ORDER BY ca.state""")
+    return df
