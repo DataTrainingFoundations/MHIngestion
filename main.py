@@ -37,6 +37,7 @@ def main():
     insert_rejected_data(rejected)
     db_results = read_valid_data()
     print(db_results)
+    starify()
     close_connection()
     #loads valid into database
     #loader method goes here
