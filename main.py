@@ -4,6 +4,7 @@ from api_ingestion import*
 from db import *
 from pathlib import Path
 import mysql.connector
+import matplotlib.pyplot as plt
 
 def main():
     # Logger for the Ingestion 
@@ -66,8 +67,13 @@ if __name__ == "__main__":
     valid = clean_data_api(valid)
     start_unemployment_DB()
     insert_valid_unemployment_data(valid)
-    join_results = mh_unemployement_join()
-    print(join_results)
+    # join_results = mh_unemployement_join()
+    # print(join_results)
+    results = show_mh_by_sex_indicator("Received Counseling or Therapy, Last 4 Weeks")
+    print(results)
+    pivot_res = results.pivot_table(index = 'time_period_start_date', values = 'value', columns='subcategory')
+    pivot_res.plot()
+    plt.show()
     close_connection()
     close_connection_api()
     
