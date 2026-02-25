@@ -41,7 +41,7 @@ y_axis = st.selectbox("Y-axis column (numeric)", options=numeric_cols, index=0)
 # Downsampling
 step_size = st.slider(
     "Sample every N rows",
-    min_value=1, max_value=50,
+    min_value=1, max_value=100,
     value=1, step=1,
     help="Downsample large datasets to reduce visual clutter."
 )
