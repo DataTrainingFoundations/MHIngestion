@@ -16,7 +16,11 @@ _ = st.session_state.reload_trigger  # dummy variable to trigger rerun
 # --- Load Data ---
 conn = st.connection("mysql", type="sql")
 df_mh = conn.query("SELECT * FROM mental_health")
-df_ut = conn.query("SELECT * FROM unemployment")
+df_ut = conn.query("""
+    SELECT * 
+    FROM unemployment
+    ORDER BY date DESC
+""")
 
 # --- Project Overview ---
 st.header("Project Overview")
