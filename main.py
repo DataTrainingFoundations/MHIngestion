@@ -41,39 +41,23 @@ def main():
     # db_results = read_valid_data()
     # print(db_results)
     starify()
-    #loads valid into database
-    #loader method goes here
+    
+    #creates seed data for the unemployment table if it does not exist
+    start_unemployment_DB()
+    recent_date = streamlit_api_db.get_max_unemployment_month()
+    # Checks if there is data in the unemployment table
+    if recent_date is None:
+        logger.info("API Ingestion pipeline starting")
+        PROJECT_ROOT = Path(__file__).resolve().parent
+        data_path = PROJECT_ROOT / "data" / "unemployment_data_seed.json"
+        df = read_json(data_path)
+        valid, rejected = retrieve_data_api(df)
+        valid = clean_data_api(valid)
+        insert_valid_unemployment_data(valid)
+    close_connection()
+    close_connection_api()
 
 
 if __name__ == "__main__":
     main()
-    # Logger for the Ingestion 
-    Path("logs").mkdir(exist_ok=True)
-
-    logging.basicConfig(
-        filename="logs/ingestion.log",
-        filemode="a",
-        format="%(process)d - %(asctime)s - %(name)s - %(levelname)s - %(message)s",
-        datefmt="%d-%b-%y %H:%M:%S",
-        level=logging.DEBUG
-    )
-
-    logger = logging.getLogger("main")
-    logger.info("Ingestion pipeline starting")
-    PROJECT_ROOT = Path(__file__).resolve().parent
-    data_path = PROJECT_ROOT / "data" / "unemployment_data_seed.json"
-    df = read_json(data_path)
-    valid, rejected = retrieve_data_api(df)
-    valid = clean_data_api(valid)
-    start_unemployment_DB()
-    insert_valid_unemployment_data(valid)
-    # join_results = mh_unemployement_join()
-    # print(join_results)
-    results = show_mh_by_sex_indicator("Received Counseling or Therapy, Last 4 Weeks")
-    print(results)
-    pivot_res = results.pivot_table(index = 'time_period_start_date', values = 'value', columns='subcategory')
-    pivot_res.plot()
-    plt.show()
-    close_connection()
-    close_connection_api()
     
