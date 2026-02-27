@@ -34,7 +34,3 @@ def test_validator_rejects_suppression_flag():
 def test_validator_rejects_phase_equal_negative_one():
     assert doesChangeCauseRejection("Phase", -1)
 
-if __name__ == "__main__":
-    test_all_data_loaded()
-    test_successful_validation()
-    
