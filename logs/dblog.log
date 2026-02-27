@@ -5093,3 +5093,278 @@
 17952 - 23-Feb-26 14:19:49 - matplotlib.font_manager - findfont: Matching sans\-serif:style=normal:variant=normal:weight=normal:stretch=normal:size=10.0 to DejaVu Sans ('C:\\Users\\armin\\AppData\\Local\\Programs\\Python\\Python313\\Lib\\site-packages\\matplotlib\\mpl-data\\fonts\\ttf\\DejaVuSans.ttf') with score of 0.050000.
 17952 - 23-Feb-26 14:19:49 - DBlogger - Successfully closed DB connection
 17952 - 23-Feb-26 14:19:49 - DBlogger - Successfully closed DB connection
+22424 - 25-Feb-26 09:14:25 - matplotlib - matplotlib data path: C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\matplotlib\mpl-data
+22424 - 25-Feb-26 09:14:25 - matplotlib - CONFIGDIR=C:\Users\mishr\.matplotlib
+22424 - 25-Feb-26 09:14:25 - matplotlib - interactive is False
+22424 - 25-Feb-26 09:14:25 - matplotlib - platform is win32
+22424 - 25-Feb-26 09:14:25 - matplotlib - CACHEDIR=C:\Users\mishr\.matplotlib
+22424 - 25-Feb-26 09:14:25 - matplotlib.font_manager - Using fontManager instance from C:\Users\mishr\.matplotlib\fontlist-v390.json
+22424 - 25-Feb-26 09:14:26 - main - Ingestion pipeline starting
+22424 - 25-Feb-26 09:14:26 - ingestion.Reader - Attempting to read CSV at C:\DataTrainingProjects\Project1\DataIngestionProject\data\Mental_Health_DB.csv
+22424 - 25-Feb-26 09:14:26 - ingestion.Reader - Read 10404 rows from C:\DataTrainingProjects\Project1\DataIngestionProject\data\Mental_Health_DB.csv
+22424 - 25-Feb-26 09:14:26 - ingestion.Validator - Normalized columns: ['indicator', 'group', 'state', 'subgroup', 'phase', 'time_period', 'time_period_label', 'time_period_start_date', 'time_period_end_date', 'value', 'lowci', 'highci', 'confidence_interval', 'quartile_range', 'suppression_flag']
+22424 - 25-Feb-26 09:14:26 - ingestion.Validator - Successfully validated 9914 rows
+22424 - 25-Feb-26 09:14:26 - ingestion.Validator - Rejected 490 rows
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Starting data cleaning step
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Removed 0 duplicate rows
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted column 'phase' to numeric
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted column 'value' to numeric
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted column 'lowci' to numeric
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted column 'highci' to numeric
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted 'time_period' to nullable Int64
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted 'time_period_start_date' to datetime
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted 'time_period_end_date' to datetime
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted 'indicator' to string
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted 'group' to string
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted 'state' to string
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted 'subgroup' to string
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted 'time_period_label' to string
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted 'confidence_interval' to string
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted 'quartile_range' to string
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Completed data cleaning.
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Starting data cleaning step
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Removed 0 duplicate rows
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted column 'phase' to numeric
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted column 'value' to numeric
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted column 'lowci' to numeric
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted column 'highci' to numeric
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted 'time_period' to nullable Int64
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted 'time_period_start_date' to datetime
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted 'time_period_end_date' to datetime
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted 'indicator' to string
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted 'group' to string
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted 'state' to string
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted 'subgroup' to string
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted 'time_period_label' to string
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted 'confidence_interval' to string
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted 'quartile_range' to string
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted suppression_flag to numeric
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Converted rejection_reason to string
+22424 - 25-Feb-26 09:14:26 - ingestion.Cleaner - Completed data cleaning.
+22424 - 25-Feb-26 09:14:27 - DBlogger - Successfully connected to database
+22424 - 25-Feb-26 09:14:29 - DBlogger - Succesfully inserted 9914 rows into database
+22424 - 25-Feb-26 09:14:29 - DBlogger - Error occurred during data insertion: 'NoneType' object has no attribute 'session'
+22424 - 25-Feb-26 09:14:29 - DBlogger - Created fact table and dimension tables for star schema
+22424 - 25-Feb-26 09:15:12 - DBlogger - Populated all star schema tables with data
+22424 - 25-Feb-26 09:15:13 - DBlogger - Successfully closed DB connection
+22424 - 25-Feb-26 09:15:13 - DBlogger - Successfully closed DB connection
+29644 - 25-Feb-26 10:00:38 - matplotlib - matplotlib data path: C:\Users\mishr\AppData\Local\Programs\Python\Python313\Lib\site-packages\matplotlib\mpl-data
+29644 - 25-Feb-26 10:00:38 - matplotlib - CONFIGDIR=C:\Users\mishr\.matplotlib
+29644 - 25-Feb-26 10:00:38 - matplotlib - interactive is False
+29644 - 25-Feb-26 10:00:38 - matplotlib - platform is win32
+29644 - 25-Feb-26 10:00:38 - matplotlib - CACHEDIR=C:\Users\mishr\.matplotlib
+29644 - 25-Feb-26 10:00:38 - matplotlib.font_manager - Using fontManager instance from C:\Users\mishr\.matplotlib\fontlist-v390.json
+29644 - 25-Feb-26 10:00:39 - main - Ingestion pipeline starting
+29644 - 25-Feb-26 10:00:39 - ingestion.Reader - Attempting to read CSV at C:\DataTrainingProjects\Project1\DataIngestionProject\data\Mental_Health_DB.csv
+29644 - 25-Feb-26 10:00:39 - ingestion.Reader - Read 10404 rows from C:\DataTrainingProjects\Project1\DataIngestionProject\data\Mental_Health_DB.csv
+29644 - 25-Feb-26 10:00:39 - ingestion.Validator - Normalized columns: ['indicator', 'group', 'state', 'subgroup', 'phase', 'time_period', 'time_period_label', 'time_period_start_date', 'time_period_end_date', 'value', 'lowci', 'highci', 'confidence_interval', 'quartile_range', 'suppression_flag']
+29644 - 25-Feb-26 10:00:39 - ingestion.Validator - Successfully validated 9914 rows
+29644 - 25-Feb-26 10:00:39 - ingestion.Validator - Rejected 490 rows
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Starting data cleaning step
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Removed 0 duplicate rows
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted column 'phase' to numeric
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted column 'value' to numeric
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted column 'lowci' to numeric
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted column 'highci' to numeric
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted 'time_period' to nullable Int64
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted 'time_period_start_date' to datetime
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted 'time_period_end_date' to datetime
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted 'indicator' to string
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted 'group' to string
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted 'state' to string
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted 'subgroup' to string
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted 'time_period_label' to string
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted 'confidence_interval' to string
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted 'quartile_range' to string
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Completed data cleaning.
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Starting data cleaning step
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Removed 0 duplicate rows
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted column 'phase' to numeric
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted column 'value' to numeric
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted column 'lowci' to numeric
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted column 'highci' to numeric
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted 'time_period' to nullable Int64
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted 'time_period_start_date' to datetime
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted 'time_period_end_date' to datetime
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted 'indicator' to string
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted 'group' to string
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted 'state' to string
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted 'subgroup' to string
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted 'time_period_label' to string
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted 'confidence_interval' to string
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted 'quartile_range' to string
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted suppression_flag to numeric
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Converted rejection_reason to string
+29644 - 25-Feb-26 10:00:39 - ingestion.Cleaner - Completed data cleaning.
+29644 - 25-Feb-26 10:00:40 - DBlogger - Successfully connected to database
+29644 - 25-Feb-26 10:00:41 - DBlogger - Succesfully inserted 9914 rows into database
+29644 - 25-Feb-26 10:00:41 - DBlogger - Error occurred during data insertion: 'NoneType' object has no attribute 'session'
+29644 - 25-Feb-26 10:00:42 - DBlogger - Created fact table and dimension tables for star schema
+29644 - 25-Feb-26 10:01:21 - DBlogger - Populated all star schema tables with data
+29644 - 25-Feb-26 10:01:22 - DBlogger - Successfully closed DB connection
+29644 - 25-Feb-26 10:01:22 - DBlogger - Successfully closed DB connection
+15900 - 25-Feb-26 10:11:42 - api_ingestion.Reader - Requesting BLS data | series=50 | years=2022-2023
+15900 - 25-Feb-26 10:11:42 - urllib3.connectionpool - Starting new HTTPS connection (1): api.bls.gov:443
+15900 - 25-Feb-26 10:11:43 - urllib3.connectionpool - https://api.bls.gov:443 "POST /publicAPI/v2/timeseries/data/ HTTP/1.1" 200 None
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Reader - BLS fetch successful | rows=1200
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Reader - {'source': 'bls_laus_api', 'series_requested': 50, 'rows_returned': 1200, 'start_year': 2022, 'end_year': 2023}
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Validator - Normalized columns: ['series_id', 'year', 'period', 'period_name', 'value']
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Validator - Successfully validated 1200 rows
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Validator - Rejected 0 rows
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Cleaner - Starting data cleaning step
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Cleaner - Removed 0 duplicate rows
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Cleaner - Converted column value to numeric
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Cleaner - Converted column year to numeric
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Cleaner - Created column date and converted it to datetime
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Cleaner - Converted series_id to string
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Cleaner - Created column state_fips 
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Cleaner - Created column state and converted it to string
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Cleaner - Completed data cleaning.
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Cleaner - Starting data cleaning step
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Cleaner - Removed 0 duplicate rows
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Cleaner - Converted column value to numeric
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Cleaner - Converted column year to numeric
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Cleaner - Created column date and converted it to datetime
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Cleaner - Converted series_id to string
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Cleaner - Created column state_fips 
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Cleaner - Created column state and converted it to string
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Cleaner - Converted rejection_reason to string
+15900 - 25-Feb-26 10:11:44 - api_ingestion.Cleaner - Completed data cleaning.
+15900 - 25-Feb-26 10:11:44 - DBlogger - Upserted/updated 600 rows into unemployment
+15900 - 25-Feb-26 10:11:44 - DBlogger - Successfully closed DB connection
+30244 - 25-Feb-26 10:28:42 - api_ingestion.Reader - Requesting BLS data | series=50 | years=2022-2023
+30244 - 25-Feb-26 10:28:42 - urllib3.connectionpool - Starting new HTTPS connection (1): api.bls.gov:443
+30244 - 25-Feb-26 10:28:43 - urllib3.connectionpool - https://api.bls.gov:443 "POST /publicAPI/v2/timeseries/data/ HTTP/1.1" 200 None
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Reader - BLS fetch successful | rows=1200
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Reader - {'source': 'bls_laus_api', 'series_requested': 50, 'rows_returned': 1200, 'start_year': 2022, 'end_year': 2023}
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Validator - Normalized columns: ['series_id', 'year', 'period', 'period_name', 'value']
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Validator - Successfully validated 1200 rows
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Validator - Rejected 0 rows
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Cleaner - Starting data cleaning step
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Cleaner - Removed 0 duplicate rows
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Cleaner - Converted column value to numeric
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Cleaner - Converted column year to numeric
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Cleaner - Created column date and converted it to datetime
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Cleaner - Converted series_id to string
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Cleaner - Created column state_fips 
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Cleaner - Created column state and converted it to string
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Cleaner - Completed data cleaning.
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Cleaner - Starting data cleaning step
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Cleaner - Removed 0 duplicate rows
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Cleaner - Converted column value to numeric
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Cleaner - Converted column year to numeric
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Cleaner - Created column date and converted it to datetime
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Cleaner - Converted series_id to string
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Cleaner - Created column state_fips 
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Cleaner - Created column state and converted it to string
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Cleaner - Converted rejection_reason to string
+30244 - 25-Feb-26 10:28:43 - api_ingestion.Cleaner - Completed data cleaning.
+30244 - 25-Feb-26 10:28:43 - DBlogger - Upserted/updated 600 rows into unemployment
+30244 - 25-Feb-26 10:28:43 - DBlogger - Successfully closed DB connection
+37980 - 25-Feb-26 11:06:49 - api_ingestion.Reader - Requesting BLS data | series=50 | years=2022-2023
+37980 - 25-Feb-26 11:06:49 - urllib3.connectionpool - Starting new HTTPS connection (1): api.bls.gov:443
+37980 - 25-Feb-26 11:06:50 - urllib3.connectionpool - https://api.bls.gov:443 "POST /publicAPI/v2/timeseries/data/ HTTP/1.1" 200 None
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Reader - BLS fetch successful | rows=1200
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Reader - {'source': 'bls_laus_api', 'series_requested': 50, 'rows_returned': 1200, 'start_year': 2022, 'end_year': 2023}
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Validator - Normalized columns: ['series_id', 'year', 'period', 'period_name', 'value']
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Validator - Successfully validated 1200 rows
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Validator - Rejected 0 rows
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Cleaner - Starting data cleaning step
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Cleaner - Removed 0 duplicate rows
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Cleaner - Converted column value to numeric
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Cleaner - Converted column year to numeric
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Cleaner - Created column date and converted it to datetime
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Cleaner - Converted series_id to string
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Cleaner - Created column state_fips 
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Cleaner - Created column state and converted it to string
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Cleaner - Completed data cleaning.
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Cleaner - Starting data cleaning step
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Cleaner - Removed 0 duplicate rows
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Cleaner - Converted column value to numeric
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Cleaner - Converted column year to numeric
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Cleaner - Created column date and converted it to datetime
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Cleaner - Converted series_id to string
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Cleaner - Created column state_fips 
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Cleaner - Created column state and converted it to string
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Cleaner - Converted rejection_reason to string
+37980 - 25-Feb-26 11:06:50 - api_ingestion.Cleaner - Completed data cleaning.
+37980 - 25-Feb-26 11:06:50 - DBlogger - Upserted/updated 600 rows into unemployment
+37980 - 25-Feb-26 11:06:50 - DBlogger - Successfully closed DB connection
+36984 - 25-Feb-26 11:10:21 - api_ingestion.Reader - Requesting BLS data | series=50 | years=2022-2023
+36984 - 25-Feb-26 11:10:21 - urllib3.connectionpool - Starting new HTTPS connection (1): api.bls.gov:443
+36984 - 25-Feb-26 11:10:22 - urllib3.connectionpool - https://api.bls.gov:443 "POST /publicAPI/v2/timeseries/data/ HTTP/1.1" 200 None
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Reader - BLS fetch successful | rows=1200
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Reader - {'source': 'bls_laus_api', 'series_requested': 50, 'rows_returned': 1200, 'start_year': 2022, 'end_year': 2023}
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Validator - Normalized columns: ['series_id', 'year', 'period', 'period_name', 'value']
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Validator - Successfully validated 1200 rows
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Validator - Rejected 0 rows
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Cleaner - Starting data cleaning step
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Cleaner - Removed 0 duplicate rows
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Cleaner - Converted column value to numeric
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Cleaner - Converted column year to numeric
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Cleaner - Created column date and converted it to datetime
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Cleaner - Converted series_id to string
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Cleaner - Created column state_fips 
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Cleaner - Created column state and converted it to string
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Cleaner - Completed data cleaning.
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Cleaner - Starting data cleaning step
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Cleaner - Removed 0 duplicate rows
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Cleaner - Converted column value to numeric
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Cleaner - Converted column year to numeric
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Cleaner - Created column date and converted it to datetime
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Cleaner - Converted series_id to string
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Cleaner - Created column state_fips 
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Cleaner - Created column state and converted it to string
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Cleaner - Converted rejection_reason to string
+36984 - 25-Feb-26 11:10:22 - api_ingestion.Cleaner - Completed data cleaning.
+36984 - 25-Feb-26 11:10:22 - DBlogger - Upserted/updated 600 rows into unemployment
+36984 - 25-Feb-26 11:10:22 - DBlogger - Successfully closed DB connection
+33488 - 25-Feb-26 11:10:44 - api_ingestion.Reader - Requesting BLS data | series=50 | years=2022-2023
+33488 - 25-Feb-26 11:10:44 - urllib3.connectionpool - Starting new HTTPS connection (1): api.bls.gov:443
+33488 - 25-Feb-26 11:10:45 - urllib3.connectionpool - https://api.bls.gov:443 "POST /publicAPI/v2/timeseries/data/ HTTP/1.1" 200 None
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Reader - BLS fetch successful | rows=1200
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Reader - {'source': 'bls_laus_api', 'series_requested': 50, 'rows_returned': 1200, 'start_year': 2022, 'end_year': 2023}
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Validator - Normalized columns: ['series_id', 'year', 'period', 'period_name', 'value']
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Validator - Successfully validated 1200 rows
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Validator - Rejected 0 rows
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Cleaner - Starting data cleaning step
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Cleaner - Removed 0 duplicate rows
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Cleaner - Converted column value to numeric
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Cleaner - Converted column year to numeric
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Cleaner - Created column date and converted it to datetime
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Cleaner - Converted series_id to string
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Cleaner - Created column state_fips 
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Cleaner - Created column state and converted it to string
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Cleaner - Completed data cleaning.
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Cleaner - Starting data cleaning step
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Cleaner - Removed 0 duplicate rows
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Cleaner - Converted column value to numeric
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Cleaner - Converted column year to numeric
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Cleaner - Created temporary column month and converted it to numeric
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Cleaner - Created column date and converted it to datetime
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Cleaner - Converted series_id to string
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Cleaner - Created column state_fips 
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Cleaner - Created column state and converted it to string
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Cleaner - dropped columns series_id, year, month, and period_name
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Cleaner - Converted rejection_reason to string
+33488 - 25-Feb-26 11:10:45 - api_ingestion.Cleaner - Completed data cleaning.
+33488 - 25-Feb-26 11:10:45 - DBlogger - Upserted/updated 600 rows into unemployment
+33488 - 25-Feb-26 11:10:45 - DBlogger - Successfully closed DB connection
