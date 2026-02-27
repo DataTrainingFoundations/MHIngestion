@@ -1,34 +1,46 @@
 import streamlit as st
+from main import *
 
 st.set_page_config(page_title="Project Home", layout="wide")
 st.title("Mental Health & Unemployment Dashboard")
 
 conn = st.connection("mysql", type="sql")
 
-# --- Reload Button ---
-if st.button("Reload Unemployment Data"):
+# --- load Button ---
+if "force_reload" not in st.session_state:
+    st.session_state.force_reload = False
+if st.button("Load Data"):
+    main()
     st.session_state.force_reload = True
 
-# --- Load Mental Health Data (normal cached query) ---
-df_mh = conn.query("SELECT * FROM mental_health")
+# --- Reload Button ---
+if "force_reload" not in st.session_state:
+    st.session_state.force_reload = False
 
-# --- Load Unemployment Data ---
-if st.session_state.get("force_reload", False):
+if st.button("Reload All Data"):
+    st.session_state.force_reload = True
+
+# --- Load Data ---
+if st.session_state.force_reload:
     # ttl=0 forces fresh query (no cache)
-    df_ut = conn.query("""
-        SELECT * 
+    df_mh = conn.query("SELECT * FROM mental_health", ttl=0)
+    df_ut = conn.query(
+        """
+        SELECT *
         FROM unemployment
-        ORDER BY date DESC
-    """, ttl=0)
-
+        """,
+        ttl=0
+    )
     # reset trigger
     st.session_state.force_reload = False
 else:
-    df_ut = conn.query("""
-        SELECT * 
+    df_mh = conn.query("SELECT * FROM mental_health")
+    df_ut = conn.query(
+        """
+        SELECT *
         FROM unemployment
-        ORDER BY date DESC
-    """)
+        """
+    )
 
 # --- Project Overview ---
 st.header("Project Overview")
@@ -50,7 +62,7 @@ st.markdown(
 st.header("Data Preview")
 
 st.subheader("Mental Health Data")
-st.dataframe(df_mh.head(20), use_container_width=True)
+st.dataframe(df_mh, use_container_width=True)
 
 st.subheader("Unemployment Data")
-st.dataframe(df_ut.head(20), use_container_width=True)
+st.dataframe(df_ut, use_container_width=True)
