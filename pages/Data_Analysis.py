@@ -11,13 +11,13 @@ st.caption("Visualize mental health data.")
 
 # --- Load your DataFrame ---
 conn = st.connection("mysql", type="sql")
-df = conn.query("SELECT * FROM mental_health")
+df = conn.query("SELECT * FROM mental_health", ttl=0)
 
 if df.empty:
     st.warning("Database is empty.")
     st.stop()
 
-st.subheader("Preview (first 20 rows)")
+st.subheader("Mental Health Data Preview")
 st.dataframe(df.head(20), use_container_width=True)
 
 # ------------------------
